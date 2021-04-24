@@ -1,0 +1,3 @@
+[submodule "SplashShowdownSol/Quack-Engine"]
+	path = SplashShowdownSol/Quack-Engine
+	url = https://github.com/El-limon-mecanico/Quack-Engine.git
