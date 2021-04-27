@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -151,6 +151,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Source.cpp" />
+    <ClCompile Include="Bounce.cpp" />
+    <ClCompile Include="BulletMovement.cpp" />
+    <ClCompile Include="Health.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bounce.h" />
+    <ClInclude Include="BulletMovement.h" />
+    <ClInclude Include="Health.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
