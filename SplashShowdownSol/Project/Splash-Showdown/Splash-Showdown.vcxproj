@@ -127,6 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -141,6 +142,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
