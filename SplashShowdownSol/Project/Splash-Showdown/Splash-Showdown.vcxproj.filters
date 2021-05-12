@@ -18,24 +18,24 @@
     <ClCompile Include="..\..\Src\Source.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Health.cpp">
+    <ClCompile Include="..\..\Src\Bounce.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="BulletMovement.cpp">
+    <ClCompile Include="..\..\Src\BulletMovement.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Bounce.cpp">
+    <ClCompile Include="..\..\Src\Health.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Health.h">
+    <ClInclude Include="..\..\Src\Bounce.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="BulletMovement.h">
+    <ClInclude Include="..\..\Src\BulletMovement.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Bounce.h">
+    <ClInclude Include="..\..\Src\Health.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

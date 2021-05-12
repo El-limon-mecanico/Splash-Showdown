@@ -161,15 +161,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\Bounce.cpp" />
+    <ClCompile Include="..\..\Src\BulletMovement.cpp" />
+    <ClCompile Include="..\..\Src\Health.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
-    <ClCompile Include="Bounce.cpp" />
-    <ClCompile Include="BulletMovement.cpp" />
-    <ClCompile Include="Health.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bounce.h" />
-    <ClInclude Include="BulletMovement.h" />
-    <ClInclude Include="Health.h" />
+    <ClInclude Include="..\..\Src\Bounce.h" />
+    <ClInclude Include="..\..\Src\BulletMovement.h" />
+    <ClInclude Include="..\..\Src\Health.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
