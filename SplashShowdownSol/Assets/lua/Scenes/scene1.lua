@@ -120,7 +120,7 @@ defaultCamera = {
 
     Camera = {
         Name = "MainCam",
-        Background = {1,1,0},
+        Background = {0.12,0.63,0.85},
         LookAt = {0,0,0},
         Width = 0,
         Height = 0,
