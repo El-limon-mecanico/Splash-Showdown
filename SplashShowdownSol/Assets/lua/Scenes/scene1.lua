@@ -49,13 +49,13 @@ entidad3 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {0,0,0},
-        Scale = {50,50,50},
+        Position = {-5,1,4},
+        Scale = {1,1,1},
         Rotation = {0,90,90}
     },
 
     MeshRenderer = {
-        Mesh = "diagonales.mesh",
+        Mesh = "Cube",
     },
 
     Rigidbody = {
@@ -140,17 +140,17 @@ sceneLight = {
     Components = {"Transform", "Light"},
 
     Transform = {
-        Position = {10,10,10},
+        Position = {-10,10,10},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
 
     Light = {
-        LightType = 1,
+        LightType = 0,
         DiffuseColor = {1,1,1},
         SpecularColor = {1,1,1},
         Direction = {0,0,0},
-        PowerLevel = 1,
+        Distance = 100,
         InnerAngle = 30,
         OuterAngle = 90,
         isOn = true
