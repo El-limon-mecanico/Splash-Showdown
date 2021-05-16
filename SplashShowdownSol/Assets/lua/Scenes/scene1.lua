@@ -49,13 +49,13 @@ entidad3 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {-5,1,4},
-        Scale = {1,1,1},
+        Position = {0,0,0},
+        Scale = {50,50,50},
         Rotation = {0,90,90}
     },
 
     MeshRenderer = {
-        Mesh = "Cube",
+        Mesh = "diagonales.mesh",
     },
 
     Rigidbody = {
