@@ -44,12 +44,14 @@ tanque1 = {
         Mass = 1,
         Trigger = false,
         Static = false,
-        PositionConstrains = {0,0,0},
+        PositionConstrains = {0,1,0},
         RotationConstrains = {0,0,0}
     },
 
     PlayerMovement = {
-        Speed = 0
+        Speed = 100,
+        RotKeyLeft = 20,
+        RotKeyRight = 8
     }
 }
 
