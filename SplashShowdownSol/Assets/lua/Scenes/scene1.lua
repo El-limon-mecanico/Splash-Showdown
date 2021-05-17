@@ -1,97 +1,126 @@
 ﻿scene1 = {
-    entities = {"defaultCamera","plano", "tanque1", "tanque2", "sceneLight"}
+    entities = {"defaultCamera","entidad1", "entidad2", "entidad3", "entidad4", "entidad5", "sceneLight"}
 }
 
-plano = {
+entidad1 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
         Position = {0,0,0},
-        Scale = {13,10,1},
-        Rotation = {-90,0,0}
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
     },
 
     MeshRenderer = {
-        Mesh = "Plane"
+        Mesh = "mapa.mesh",
     },
 
     Rigidbody = {
         Type = "Cube",
         Mass = 1,
         Trigger = false,
-        Static = true,
-        PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
-    }  
-}
-
-tanque1 = {
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement"},
-
-    Transform = {
-        Position = {11,1.1,0},
-        Scale = {1,1,1},
-        Rotation = {0,0,0}
+        Static = true
     },
-
-    MeshRenderer = {
-        Mesh = "Cube",
-        Material = "Tanques/Rojo"
-    },
-
-    Rigidbody = {
-        Type = "Cube",
-        Mass = 1,
-        Trigger = false,
-        Static = false,
-        PositionConstrains = {0,1,0},
-        RotationConstrains = {0,0,0}
-    },
-
-    PlayerMovement = {
-        MovSpeed = 100,
-        RotSpeed = 25,
-        RotKeyLeft = 20,
-        RotKeyRight = 8
-    }
 }
 
 tanque2 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {-11,1.1,0},
-        Scale = {1,1,1},
-        Rotation = {0,0,0}
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
     },
 
     MeshRenderer = {
-        Mesh = "Cube",
-        Material = "Tanques/Verde"
+        Mesh = "arbol.mesh",
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Hull",
         Mass = 1,
         Trigger = false,
-        Static = true,
-        PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
+        Static = true
     },
 }
+
+
+entidad3 = {
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "diagonales.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true
+    },
+}
+
+entidad4 = {
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "cruz.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true
+    },
+}
+
+entidad5 = {
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "bases.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true
+    },
+}
+
 
 defaultCamera = {
     Components = {"Transform", "Camera"},
 
     Transform = {
-        Position = {0,24,14},
+        Position = {0,20,20},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
 
     Camera = {
         Name = "MainCam",
-        Background = {0.6,0.8,1},
+        Background = {0.12,0.63,0.85},
         LookAt = {0,0,0},
         Width = 0,
         Height = 0,
@@ -105,13 +134,13 @@ sceneLight = {
     Components = {"Transform", "Light"},
 
     Transform = {
-        Position = {-5,17,10},
+        Position = {-10,10,10},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
 
     Light = {
-        LightType = 1,
+        LightType = 0,
         DiffuseColor = {1,1,1},
         SpecularColor = {1,1,1},
         Direction = {0,0,0},
