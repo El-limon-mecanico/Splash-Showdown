@@ -7,7 +7,8 @@
 class PlayerMovement : public Component
 {
 private:
-	float speed_;
+	float movSpeed_;
+	float rotSpeed_;
 	SDL_Scancode rotKeyLeft_;
 	SDL_Scancode rotKeyRight_;
 
@@ -26,7 +27,6 @@ public:
 
 	virtual bool init(luabridge::LuaRef parameterTable = { nullptr });
 	void update();
-	void fixedUpdate();
 
 	static std::string GetName() { return "PlayerMovement"; }
 };

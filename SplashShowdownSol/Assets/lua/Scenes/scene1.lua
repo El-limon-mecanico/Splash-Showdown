@@ -49,7 +49,8 @@ tanque1 = {
     },
 
     PlayerMovement = {
-        Speed = 100,
+        MovSpeed = 100,
+        RotSpeed = 25,
         RotKeyLeft = 20,
         RotKeyRight = 8
     }
@@ -73,7 +74,7 @@ tanque2 = {
         Type = "Cube",
         Mass = 1,
         Trigger = false,
-        Static = false,
+        Static = true,
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },

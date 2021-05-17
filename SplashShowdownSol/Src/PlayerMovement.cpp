@@ -9,9 +9,10 @@ PlayerMovement::~PlayerMovement() {
 
 bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de errores
 {
-    speed_ = readVariable<float>(parameterTable, "Speed");
-    rotKeyLeft_ = (SDL_Scancode)readVariable<int>(parameterTable, "RotKeyLeft");
-    rotKeyRight_ = (SDL_Scancode)readVariable<int>(parameterTable, "RotKeyRight");
+    movSpeed_ = readVariable<float>(parameterTable, "MovSpeed");
+    rotSpeed_ = readVariable<float>(parameterTable, "RotSpeed");
+    //rotKeyLeft_ = (SDL_Scancode)readVariable<int>(parameterTable, "RotKeyLeft"); //TODO: Quitar si va por Axis
+    //rotKeyRight_ = (SDL_Scancode)readVariable<int>(parameterTable, "RotKeyRight");
 
     rb_ = entity_->getComponent<Rigidbody>();
     tr_ = entity_->transform();
@@ -20,35 +21,16 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de er
 }
 
 void PlayerMovement::move() {
-    //Vector3D vel = Vector3D(0, 0, 0);
-    //rb_->setVelocity(vel);
-    rb_->clearForce();
-
-    rb_->addForce(Vector3D(speed_, 0, 0) * InputManager::Instance()->getAxis(Axis::Horizontal));
-    rb_->addForce(Vector3D(0, 0, -speed_) * InputManager::Instance()->getAxis(Axis::Vertical));
-
-    //if (InputManager::Instance()->isKeyDown(keyForward_)) { //Adelante
-    //    //rb_->setVelocity(vel + Vector3D(0, 0, -speed_));
-    //    rb_->addForce(Vector3D(0, 0, -speed_));
-    //}
+    rb_->addForce(transform->forward * -movSpeed_ * InputManager::Instance()->getAxis(Axis::Vertical));
 }
 
 void PlayerMovement::rotate() {
-    if (InputManager::Instance()->isKeyDown(rotKeyLeft_)) { //Izquierda
-        
-    }
-
-    if (InputManager::Instance()->isKeyDown(rotKeyRight_)) { //Derecha
-
-    }
+    rb_->addTorque(Vector3D(0, -rotSpeed_, 0) * InputManager::Instance()->getAxis(Axis::Horizontal));
 }
 
 void PlayerMovement::update()
 {
-    move();
-}
-
-void PlayerMovement::fixedUpdate()
-{
-    //move();
+    rb_->clearForce();
+    move(); //TODO: Si se puede, pasar a FixedUpdate
+    rotate();
 }
