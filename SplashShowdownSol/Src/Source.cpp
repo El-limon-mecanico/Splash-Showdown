@@ -11,7 +11,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 
 	
 	if (QuackEnginePro::Init()) {
-		QuackEnginePro::Instance()->start();
+		QuackEnginePro::Instance()->start("scenes/scene1.lua", "scene1");
 	}
 
 

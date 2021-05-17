@@ -1,67 +1,126 @@
 ﻿scene1 = {
-    entities = {"defaultCamera","entidad1", "entidad2", "sceneLight"}
+    entities = {"defaultCamera","entidad1", "entidad2", "entidad3", "entidad4", "entidad5", "sceneLight"}
 }
 
 entidad1 = {
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "Prueba"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {0,5,0},
-        Scale = {1,1,1},
-        Rotation = {0,0,0}
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
     },
 
     MeshRenderer = {
-        Mesh = "Suzanne.mesh",
+        Mesh = "mapa.mesh",
     },
 
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
         Trigger = false,
-        Static = false
+        Static = true
     },
-
-    Prueba = {
-        valor1 = 1,
-        valor2 = 3,
-        valor3 = "Quack"
-    }
 }
 
 entidad2 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {0,-3,0},
-        Scale = {5,5,1},
-        Rotation = {-90,0,0}
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
     },
 
     MeshRenderer = {
-        Mesh = "Plane",
+        Mesh = "arbol.mesh",
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Hull",
         Mass = 1,
         Trigger = false,
         Static = true
-    }   
+    },
 }
+
+
+entidad3 = {
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "diagonales.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true
+    },
+}
+
+entidad4 = {
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "cruz.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true
+    },
+}
+
+entidad5 = {
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "bases.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true
+    },
+}
+
 
 defaultCamera = {
     Components = {"Transform", "Camera", "Prueba"},
 
     Transform = {
-        Position = {10,10,10},
+        Position = {0,20,20},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
 
     Camera = {
         Name = "MainCam",
-        Background = {1,1,0},
+        Background = {0.12,0.63,0.85},
         LookAt = {0,0,0},
         Width = 0,
         Height = 0,
@@ -81,17 +140,17 @@ sceneLight = {
     Components = {"Transform", "Light"},
 
     Transform = {
-        Position = {10,10,10},
+        Position = {-10,10,10},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
 
     Light = {
-        LightType = 1,
+        LightType = 0,
         DiffuseColor = {1,1,1},
         SpecularColor = {1,1,1},
         Direction = {0,0,0},
-        PowerLevel = 1,
+        Distance = 100,
         InnerAngle = 30,
         OuterAngle = 90,
         isOn = true
