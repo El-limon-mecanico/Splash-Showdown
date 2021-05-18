@@ -11,8 +11,6 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de er
 {
     movSpeed_ = readVariable<float>(parameterTable, "MovSpeed");
     rotSpeed_ = readVariable<float>(parameterTable, "RotSpeed");
-    //rotKeyLeft_ = (SDL_Scancode)readVariable<int>(parameterTable, "RotKeyLeft"); //TODO: Quitar si va por Axis
-    //rotKeyRight_ = (SDL_Scancode)readVariable<int>(parameterTable, "RotKeyRight");
 
     rb_ = entity_->getComponent<Rigidbody>();
     tr_ = entity_->transform();

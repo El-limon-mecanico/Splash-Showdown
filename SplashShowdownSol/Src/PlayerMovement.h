@@ -9,12 +9,8 @@ class PlayerMovement : public Component
 private:
 	float movSpeed_;
 	float rotSpeed_;
-	SDL_Scancode rotKeyLeft_;
-	SDL_Scancode rotKeyRight_;
-
 	Rigidbody* rb_;
 	Transform* tr_;
-
 	Vector3D vX_ = Vector3D(0, 0, 0);
 	Vector3D aX_ = Vector3D(0, 0, 0);
 
