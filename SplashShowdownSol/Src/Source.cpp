@@ -13,7 +13,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 #endif
 
 	// TODO: AQUI FALTA MANEJO DE ERRORES Y EXCEPCIONES
-	if (QuackEnginePro::Init()) {
+	if (QuackEnginePro::Init("Splash Showdown")) {
 		FactoryManager::instance()->add<PlayerMovement>();
 
 		QuackEnginePro::Instance()->start("Scenes/scene1.lua", "scene1");
