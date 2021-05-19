@@ -163,13 +163,17 @@
   <ItemGroup>
     <ClCompile Include="..\..\Src\Bounce.cpp" />
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
+    <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
+    <ClCompile Include="..\..\Src\PlayButton.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Bounce.h" />
     <ClInclude Include="..\..\Src\BulletMovement.h" />
+    <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Health.h" />
+    <ClInclude Include="..\..\Src\PlayButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

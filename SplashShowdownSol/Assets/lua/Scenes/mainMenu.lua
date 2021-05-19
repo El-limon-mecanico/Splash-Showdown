@@ -1,5 +1,5 @@
 ﻿mainMenu = {
-    entities = {"Cam","fondo", "playBoton", "titulo"}
+    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo"}
 }
 
 fondo = {
@@ -20,8 +20,8 @@ fondo = {
 playBoton = {
     Active = true,
 
-    Components = {"Button"},
-
+    Components = {"PlayButton", "Button"},
+    
     Button = {
         Active = true,
         Enable = true,
@@ -32,11 +32,34 @@ playBoton = {
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
-        Position = {0.450,0.450},
+        Position = {0.450,0.5},
         Size = {100,50},
-        CallBackFunction = "botonPresionado"
+        CallBackFunction = "Play"
     }
 }
+
+
+salirBoton = {
+    Active = true,
+
+    Components = {"ExitButton", "Button"},
+
+    Button = {
+        Active = true,
+        Enable = true,
+        Style = "WindowsLook/Button",
+        Name  = "ButtonExit",
+        Text  = "Exit",
+        TLColor = "FF000000",
+        TRColor = "FF000000",
+        BLColor = "FF000000",
+        BRColor = "FF000000",
+        Position = {0.450,0.65},
+        Size = {100,50},
+        CallBackFunction = "Exit"
+    }
+}
+
 
 titulo = {
     Active = true,
