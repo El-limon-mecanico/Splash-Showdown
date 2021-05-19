@@ -23,7 +23,9 @@ salirBoton = {
     Active = true,
 
     Components = {"BackButton", "Button"},
-
+    
+    BackButton = {},
+    
     Button = {
         Active = true,
         Enable = true,

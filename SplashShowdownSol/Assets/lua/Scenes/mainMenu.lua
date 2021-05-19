@@ -23,6 +23,8 @@ playBoton = {
     Active = true,
 
     Components = {"PlayButton", "Button"},
+
+    PlayButton = {},
     
     Button = {
         Active = true,
@@ -45,6 +47,8 @@ salirBoton = {
     Active = true,
 
     Components = {"ExitButton", "Button"},
+
+    ExitButton = {},
 
     Button = {
         Active = true,
