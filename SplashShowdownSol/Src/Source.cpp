@@ -10,8 +10,8 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 #endif
 
 	
-	if (QuackEnginePro::Init()) {
-		QuackEnginePro::Instance()->start("scenes/scene1.lua", "scene1");
+	if (QuackEnginePro::Init("Splash")) {
+		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 
 
