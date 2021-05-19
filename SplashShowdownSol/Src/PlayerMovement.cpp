@@ -22,19 +22,22 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de er
 }
 
 void PlayerMovement::move() {
-    rb_->addForce(transform->forward * movSpeed_ * InputManager::Instance()->getAxis(Axis::Vertical));
+    Vector3D a = transform->forward * movSpeed_ * InputManager::Instance()->getAxis(Axis::Vertical);
+    rb_->addForce(a);
 }
 
 void PlayerMovement::rotate() {
-    rb_->addTorque(Vector3D(0, -rotSpeed_, 0) * InputManager::Instance()->getAxis(Axis::Horizontal));
+    Vector3D a = Vector3D(0, -rotSpeed_, 0) * InputManager::Instance()->getAxis(Axis::Horizontal);
+    rb_->addTorque(a);
+    //std::cout << a << '\n';
 }
 
 void PlayerMovement::rotateTurret() {
-    if (InputManager::Instance()->isKeyDown(turretLeft_)) {
+    if (InputManager::Instance()->getKey(turretLeft_)) {
         tr_->getChildByName("torreta")->transform()->Rotate(Vector3D(0, turretSpeed_, 0)
             * QuackEnginePro::Instance()->time()->deltaTime());
     }
-    else if (InputManager::Instance()->isKeyDown(turretRight_)) {
+    else if (InputManager::Instance()->getKey(turretRight_)) {
         tr_->getChildByName("torreta")->transform()->Rotate(Vector3D(0, -turretSpeed_, 0)
             * QuackEnginePro::Instance()->time()->deltaTime());
     }
@@ -42,8 +45,15 @@ void PlayerMovement::rotateTurret() {
 
 void PlayerMovement::update()
 {
-    rb_->clearForce();
-    move(); //TODO: Si se puede, pasar a FixedUpdate
-    rotate(); //TODO: Si se puede, pasar a FixedUpdate
+	rb_->clearForce();
+	move();
+	rotate();
     rotateTurret();
 }
+
+//void PlayerMovement::fixedUpdate()
+//{
+//    rb_->clearForce();
+//    move();
+//    rotate();
+//}

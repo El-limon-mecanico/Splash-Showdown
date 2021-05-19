@@ -2,6 +2,7 @@
 
 #include "FactoryManager.h"
 #include "PlayerMovement.h"
+#include "BulletMovement.h"
 
 
 #if (defined _DEBUG)
@@ -15,6 +16,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 	// TODO: AQUI FALTA MANEJO DE ERRORES Y EXCEPCIONES
 	if (QuackEnginePro::Init("Splash Showdown")) {
 		FactoryManager::instance()->add<PlayerMovement>();
+		FactoryManager::instance()->add<BulletMovement>();
 
 		QuackEnginePro::Instance()->start("Scenes/scene1.lua", "scene1");
 	}

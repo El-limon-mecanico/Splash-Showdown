@@ -28,6 +28,7 @@ public:
 
 	virtual bool init(luabridge::LuaRef parameterTable = { nullptr });
 	void update();
+	//void fixedUpdate();
 
 	static std::string GetName() { return "PlayerMovement"; }
 };
