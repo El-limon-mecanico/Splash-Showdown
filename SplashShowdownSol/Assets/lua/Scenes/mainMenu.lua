@@ -1,12 +1,27 @@
 ﻿mainMenu = {
-    entities = {"Cam","UI"}
+    entities = {"Cam","fondo", "playBoton", "titulo"}
 }
 
-UI = {
+fondo = {
     Active = true,
 
-    Components = {"Image", "Button", "Text"},
-    
+    Components = {"Image"},
+
+    Image = {
+        Active = true,
+        Style= "WindowsLook/StaticImage",
+        Name = "FondoMenuPrincipal",
+        Image = "fondoMenuPrincipal.png",
+        Position = {0,0},
+        Size = {1000,700}
+    }
+}
+
+playBoton = {
+    Active = true,
+
+    Components = {"Button"},
+
     Button = {
         Active = true,
         Enable = true,
@@ -20,33 +35,23 @@ UI = {
         Position = {0.450,0.450},
         Size = {100,50},
         CallBackFunction = "botonPresionado"
-    },
+    }
+}
 
-    Text = {
-        Active = true,
-        Background = false,
-        Border = false,
-        Style= "TaharezLook/StaticText",
-        Name = "TextoE1",
-        Text = " Esto no es un boton, es solo texto, pero desde lua",
-        TLColor = "FF000000",
-        TRColor = "FF000000",
-        BLColor = "FF000000",
-        BRColor = "FF000000",
-        Position = {0.5,0.05},
-        Size = {405,50}
-    },
+titulo = {
+    Active = true,
+
+    Components = {"Image"},
 
     Image = {
         Active = true,
         Style= "WindowsLook/StaticImage",
-        Name = "FondoMenuPrincipal",
-        Image = "fondoMenuPrincipal.png",
-        Position = {0,0},
-        Size = {1000,700}
+        Name = "TituloPrincipal",
+        Image = "Titulo.png",
+        Position = {0.264,0.10},
+        Size = {473,200}
     }
 }
-
 
 Cam = {
     Active = true,
