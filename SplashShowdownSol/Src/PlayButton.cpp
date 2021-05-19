@@ -1,5 +1,6 @@
 #include "PlayButton.h"
 #include "CallBacks.h"
+#include "SceneMng.h"
 
 
 PlayButton::PlayButton(QuackEntity* e)
@@ -12,4 +13,6 @@ PlayButton::PlayButton(QuackEntity* e)
 void PlayButton::botonPulsado()
 {
 	std::cout << "Agarrate que nos vamos de escena\n";
+	//SceneMng::Instance()->popCurrentScene();
+	SceneMng::Instance()->loadScene("scenes/weaponMenu.lua", "weaponMenu");
 }

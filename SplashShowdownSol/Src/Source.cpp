@@ -3,6 +3,7 @@
 
 #include "PlayButton.h"
 #include "ExitButton.h"
+#include "BackButton.h"
 
 //class PlayButton;
 //class ExitButton;
@@ -16,10 +17,12 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 #endif
 
 
+
 	
 	if (QuackEnginePro::Init("Splash")) {
 		FactoryManager::instance()->add<PlayButton>();
 		FactoryManager::instance()->add<ExitButton>();
+		FactoryManager::instance()->add<BackButton>();
 		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 

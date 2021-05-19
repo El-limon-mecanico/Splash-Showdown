@@ -1,5 +1,6 @@
 #include "ExitButton.h"
 #include "CallBacks.h"
+#include "QuackEnginePro.h"
 
 
 ExitButton::ExitButton(QuackEntity* e)
@@ -12,4 +13,5 @@ ExitButton::ExitButton(QuackEntity* e)
 void ExitButton::botonPulsado()
 {
 	std::cout << "Salimos\n";
+	QuackEnginePro::Instance()->quit();
 }

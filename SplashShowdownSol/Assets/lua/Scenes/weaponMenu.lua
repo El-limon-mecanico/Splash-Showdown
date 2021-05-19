@@ -1,5 +1,5 @@
-﻿mainMenu = {
-    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo"}
+﻿weaponMenu = {
+    entities = {"Cam","fondo", "salirBoton", "titulo"}
 }
 
 fondo = {
@@ -12,53 +12,31 @@ fondo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "FondoMenuPrincipal",
-        Image = "fondoMenuPrincipal.png",
+        Name = "FondoMenuArmas",
+        Image = "fondoMenuArmas.png",
         Position = {0,0},
         Size = {1000,700}
     }
 }
 
-playBoton = {
-    Active = true,
-
-    Components = {"PlayButton", "Button"},
-    
-    Button = {
-        Active = true,
-        Enable = true,
-        Style = "WindowsLook/Button",
-        Name  = "ButtonPlay",
-        Text  = "Play",
-        TLColor = "FF000000",
-        TRColor = "FF000000",
-        BLColor = "FF000000",
-        BRColor = "FF000000",
-        Position = {0.450,0.5},
-        Size = {100,50},
-        CallBackFunction = "Play"
-    }
-}
-
-
 salirBoton = {
     Active = true,
 
-    Components = {"ExitButton", "Button"},
+    Components = {"BackButton", "Button"},
 
     Button = {
         Active = true,
         Enable = true,
         Style = "WindowsLook/Button",
-        Name  = "ButtonExit",
-        Text  = "Exit",
+        Name  = "ButtonBack",
+        Text  = "Back",
         TLColor = "FF000000",
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
-        Position = {0.450,0.65},
+        Position = {0.450,0.85},
         Size = {100,50},
-        CallBackFunction = "Exit"
+        CallBackFunction = "Back"
     }
 }
 
@@ -73,10 +51,10 @@ titulo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "TituloPrincipal",
-        Image = "Titulo.png",
-        Position = {0.264,0.10},
-        Size = {473,200}
+        Name = "TituloArmas",
+        Image = "TituloArmas.png",
+        Position = {0.151,0.05},
+        Size = {697,90}
     }
 }
 
