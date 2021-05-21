@@ -1,9 +1,15 @@
 #include "QuackEnginePro.h"
+#include "FactoryManager.h"
 
 #include "FactoryManager.h"
 #include "PlayerMovement.h"
 #include "BulletMovement.h"
+#include "PlayButton.h"
+#include "ExitButton.h"
+#include "BackButton.h"
 
+//class PlayButton;
+//class ExitButton;
 
 #if (defined _DEBUG)
 int main() {
@@ -17,8 +23,11 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 	if (QuackEnginePro::Init("Splash Showdown")) {
 		FactoryManager::instance()->add<PlayerMovement>();
 		FactoryManager::instance()->add<BulletMovement>();
-
-		QuackEnginePro::Instance()->start("Scenes/Partida.lua", "Partida");
+		FactoryManager::instance()->add<PlayButton>();
+		FactoryManager::instance()->add<ExitButton>();
+		FactoryManager::instance()->add<BackButton>();
+		
+		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 
 	return 0;
