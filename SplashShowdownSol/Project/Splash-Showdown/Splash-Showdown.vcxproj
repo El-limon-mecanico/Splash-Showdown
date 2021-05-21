@@ -100,6 +100,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,6 +118,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,8 +134,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\Src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\Src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\;$(SolutionDir)Quack-Engine\QuackEngineSol\Src\CEGUI;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Ogre\build\Dependencies\include\SDL2;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\CEGUI\cegui-0.8.7\cegui\include;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\CEGUI\cegui-0.8.7\build\cegui\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +154,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Quack-Engine\QuackEngineSol\Src\LuaBridge;$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\Lua\$(Platform);$(SolutionDir)Quack-Engine\QuackEngineSol\dependencies\LuaBridge\src;$(SolutionDir)Quack-Engine\QuackEngineSol\Src\QuackEngine\</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -166,6 +170,7 @@
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
+    <ClCompile Include="..\..\Src\PlayerMovement.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
   </ItemGroup>
@@ -175,6 +180,7 @@
     <ClInclude Include="..\..\Src\BulletMovement.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Health.h" />
+    <ClInclude Include="..\..\Src\PlayerMovement.h" />
     <ClInclude Include="..\..\Src\PlayButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

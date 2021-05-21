@@ -1,20 +1,20 @@
-﻿scene1 = {
-    entities = {"defaultCamera","entidad1", "entidad2", "entidad3", "entidad4", "entidad5", "sceneLight"}
+﻿Partida = {
+    entities = {"defaultCamera", "plano", "tanque1", "tanque2", "sceneLight"}
 }
 
-entidad1 = {
+plano = {
     Active = true,
-    
+
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {5,0,0},
-        Scale = {50,50,50},
-        Rotation = {90,90,0}
+        Position = {0,0,0},
+        Scale = {13,10,1},
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
-        Mesh = "mapa.mesh",
+        Mesh = "Plane",
     },
 
     Rigidbody = {
@@ -27,138 +27,134 @@ entidad1 = {
     },
 }
 
-entidad2 = {
+tanque1 = {
     Active = true,
-    
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement"},
 
     Transform = {
-        Position = {0,0,0},
+        Position = {11,2,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
-        Mesh = "arbol.mesh",
+        Mesh = "PatoCuerpo.mesh"
     },
 
     Rigidbody = {
-        Type = "Hull",
+        Type = "Cube",
         Mass = 1,
         Trigger = false,
-        Static = true,
+        Static = false,
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },
+
+    PlayerMovement = {
+        MovSpeed = 15,
+        RotSpeed = 2.5,
+        MovSpeedLimit = 10,
+        RotSpeedLimit = 10,
+        TurretSpeed = 55,
+        TurretLeftKey = 20,
+        TurretRightKey = 8
+    },
+    
+    Children = {
+        entities = {"cabeza1"},
+
+        cabeza1 = {
+            Active = true,
+
+            Components = {"Transform", "MeshRenderer"},
+
+            Transform = {
+                Position = {11,2.4,0.19},
+                Scale = {1,1,1},
+                Rotation = {0,0,0}
+            },
+        
+            MeshRenderer = {
+                Mesh = "PatoCabeza.mesh"
+            }
+        }
+    }
 }
 
-
-entidad3 = {
+tanque2 = {
     Active = true,
-    
+
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {0,0,0},
+        Position = {-11,2,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
-        Mesh = "diagonales.mesh",
+        Mesh = "PatoCuerpoMorado.mesh"
     },
 
     Rigidbody = {
-        Type = "Hull",
+        Type = "Cube",
         Mass = 1,
         Trigger = false,
-        Static = true,
+        Static = false,
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },
+
+    Children = {
+        entities = {"cabeza2"},
+
+        cabeza2 = {
+            Active = true,
+
+            Components = {"Transform", "MeshRenderer"},
+
+            Transform = {
+                Position = {-11,2.4,0.19},
+                Scale = {1,1,1},
+                Rotation = {0,0,0}
+            },
+        
+            MeshRenderer = {
+                Mesh = "PatoCabezaMorado.mesh"
+            }
+        }
+    }
 }
-
-entidad4 = {
-    Active = true,
-    
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
-    Transform = {
-        Position = {0,0,0},
-        Scale = {50,50,50},
-        Rotation = {0,90,90}
-    },
-
-    MeshRenderer = {
-        Mesh = "cruz.mesh",
-    },
-
-    Rigidbody = {
-        Type = "Hull",
-        Mass = 1,
-        Trigger = false,
-        Static = true,
-        PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
-    },
-}
-
-entidad5 = {
-    Active = true,
-    
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
-    Transform = {
-        Position = {0,0,0},
-        Scale = {50,50,50},
-        Rotation = {0,90,90}
-    },
-
-    MeshRenderer = {
-        Mesh = "bases.mesh",
-    },
-
-    Rigidbody = {
-        Type = "Hull",
-        Mass = 1,
-        Trigger = false,
-        Static = true,
-        PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
-    },
-}
-
 
 defaultCamera = {
-    Active = true,
-    
     Components = {"Transform", "Camera"},
 
     Transform = {
-        Position = {0,20,20},
+        Position = {0,24,14},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
 
     Camera = {
         Name = "MainCam",
-        Background = {0.12,0.63,0.85},
+        Background = {0.6,0.8,1},
         LookAt = {0,0,0},
         Width = 0,
         Height = 0,
         NearClipDistance = 1,
         FarClipDistance = 100000,
         ProjectionType = "Perspective"
-    },
+    }
 }
 
 sceneLight = {
     Active = true,
-    
+
     Components = {"Transform", "Light"},
 
     Transform = {
-        Position = {-10,10,10},
+        Position = {-5,17,10},
         Scale = {1,1,1},
         Rotation = {0,0,0}
     },
@@ -176,6 +172,8 @@ sceneLight = {
 }
 
 UI = {
+    Active = true,
+
     Components = {"Text1", "Image1", "Button1"},
 
     Text1 = {
