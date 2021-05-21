@@ -18,7 +18,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<PlayerMovement>();
 		FactoryManager::instance()->add<BulletMovement>();
 
-		QuackEnginePro::Instance()->start("Scenes/scene1.lua", "scene1");
+		QuackEnginePro::Instance()->start("Scenes/Partida.lua", "Partida");
 	}
 
 	return 0;
