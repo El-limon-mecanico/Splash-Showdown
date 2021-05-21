@@ -9,6 +9,8 @@ class PlayerMovement : public Component
 private:
 	float movSpeed_;
 	float rotSpeed_;
+	float movSpeedLimit_;
+	float rotSpeedLimit_;
 	float turretSpeed_;
 	Rigidbody* rb_;
 	Transform* tr_;

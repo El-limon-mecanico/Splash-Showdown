@@ -11,6 +11,8 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de er
 {
     movSpeed_ = readVariable<float>(parameterTable, "MovSpeed");
     rotSpeed_ = readVariable<float>(parameterTable, "RotSpeed");
+    movSpeedLimit_ = readVariable<float>(parameterTable, "MovSpeedLimit");
+    rotSpeedLimit_ = readVariable<float>(parameterTable, "RotSpeedLimit");
     turretSpeed_ = readVariable<float>(parameterTable, "TurretSpeed");
     turretLeft_ = (SDL_Scancode)readVariable<int>(parameterTable, "TurretLeftKey");
     turretRight_ = (SDL_Scancode)readVariable<int>(parameterTable, "TurretRightKey");
@@ -22,15 +24,29 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de er
 }
 
 void PlayerMovement::move() {
-    Vector3D a = transform->up * -movSpeed_ * InputManager::Instance()->getAxis(Axis::Vertical);
-    rb_->addForce(a);
-    //std::cout << a << '\n';
+    //Fuerza a 0
+    Vector3D aux = rb_->velocity();
+    aux.y = 0.0f;
+    aux *= -1;
+    rb_->addForce(aux);
+
+    if (abs(aux.x) < movSpeedLimit_ && abs(aux.z) < movSpeedLimit_) {
+        Vector3D fuerza = transform->up * -movSpeed_ * InputManager::Instance()->getAxis(Axis::Vertical);
+        rb_->addForce(fuerza);
+    }
 }
 
 void PlayerMovement::rotate() {
-    Vector3D a = Vector3D(0, -rotSpeed_, 0) * InputManager::Instance()->getAxis(Axis::Horizontal);
-    rb_->addTorque(a);
-    //std::cout << a << '\n';
+    //Torsion a 0
+    Vector3D aux = rb_->angularVelocity();
+    aux.x = aux.z = 0.0f;
+    aux *= -1;
+    rb_->addTorque(aux);
+
+    if (abs(aux.y) < rotSpeedLimit_) {
+        Vector3D a = Vector3D(0, -rotSpeed_, 0) * InputManager::Instance()->getAxis(Axis::Horizontal);
+        rb_->addTorque(a);
+    }
 }
 
 void PlayerMovement::rotateTurret() {
