@@ -3,12 +3,14 @@
 }
 
 entidad1 = {
+    Active = true,
+    
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {0,0,0},
+        Position = {5,0,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {90,90,0}
     },
 
     MeshRenderer = {
@@ -19,11 +21,15 @@ entidad1 = {
         Type = "Cube",
         Mass = 1,
         Trigger = false,
-        Static = true
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
     },
 }
 
-tanque2 = {
+entidad2 = {
+    Active = true,
+    
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
@@ -40,12 +46,16 @@ tanque2 = {
         Type = "Hull",
         Mass = 1,
         Trigger = false,
-        Static = true
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
     },
 }
 
 
 entidad3 = {
+    Active = true,
+    
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
@@ -62,11 +72,15 @@ entidad3 = {
         Type = "Hull",
         Mass = 1,
         Trigger = false,
-        Static = true
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
     },
 }
 
 entidad4 = {
+    Active = true,
+    
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
@@ -83,11 +97,15 @@ entidad4 = {
         Type = "Hull",
         Mass = 1,
         Trigger = false,
-        Static = true
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
     },
 }
 
 entidad5 = {
+    Active = true,
+    
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
@@ -104,12 +122,16 @@ entidad5 = {
         Type = "Hull",
         Mass = 1,
         Trigger = false,
-        Static = true
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
     },
 }
 
 
 defaultCamera = {
+    Active = true,
+    
     Components = {"Transform", "Camera"},
 
     Transform = {
@@ -127,10 +149,12 @@ defaultCamera = {
         NearClipDistance = 1,
         FarClipDistance = 100000,
         ProjectionType = "Perspective"
-    }
+    },
 }
 
 sceneLight = {
+    Active = true,
+    
     Components = {"Transform", "Light"},
 
     Transform = {
@@ -140,7 +164,7 @@ sceneLight = {
     },
 
     Light = {
-        LightType = 0,
+        LightType = 1,
         DiffuseColor = {1,1,1},
         SpecularColor = {1,1,1},
         Direction = {0,0,0},
