@@ -8,9 +8,9 @@ entidad1 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {5,0,0},
+        Position = {0,0,0},
         Scale = {50,50,50},
-        Rotation = {90,90,0}
+        Rotation = {0,90,90}
     },
 
     MeshRenderer = {

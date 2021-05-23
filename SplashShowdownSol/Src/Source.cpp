@@ -27,7 +27,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<ExitButton>();
 		FactoryManager::instance()->add<BackButton>();
 		
-		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
+		QuackEnginePro::Instance()->start("scenes/Partida.lua", "Partida");
 	}
 
 	return 0;

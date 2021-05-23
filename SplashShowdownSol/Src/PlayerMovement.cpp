@@ -14,9 +14,12 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de er
     readVariable<float>(parameterTable, "MovSpeedLimit", &movSpeedLimit_);
 	readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
     readVariable<float>(parameterTable, "TurretSpeed", &turretSpeed_);
-    
-    readVariable<SDL_Scancode>(parameterTable, "TurretLeftKey", &turretLeft_);
-    readVariable<SDL_Scancode>(parameterTable, "TurretRightKey", &turretRight_);
+
+    int aux;
+    readVariable<int>(parameterTable, "TurretLeftKey", &aux);
+    turretLeft_ = (SDL_Scancode)aux;
+    readVariable<int>(parameterTable, "TurretRightKey", &aux);
+    turretRight_ = (SDL_Scancode)aux;;
 
     rb_ = entity_->getComponent<Rigidbody>();
     tr_ = entity_->transform();
