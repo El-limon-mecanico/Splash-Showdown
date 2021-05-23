@@ -7,9 +7,7 @@
 #include "PlayButton.h"
 #include "ExitButton.h"
 #include "BackButton.h"
-
-//class PlayButton;
-//class ExitButton;
+#include "StartGameButton.h"
 
 #if (defined _DEBUG)
 int main() {
@@ -26,8 +24,9 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<PlayButton>();
 		FactoryManager::instance()->add<ExitButton>();
 		FactoryManager::instance()->add<BackButton>();
+		FactoryManager::instance()->add<StartGameButton>();
 		
-		QuackEnginePro::Instance()->start("scenes/Partida.lua", "Partida");
+		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 
 	return 0;

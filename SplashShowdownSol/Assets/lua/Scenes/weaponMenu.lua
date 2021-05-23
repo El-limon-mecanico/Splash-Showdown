@@ -1,5 +1,5 @@
 ﻿weaponMenu = {
-    entities = {"Cam","fondo", "salirBoton", "titulo"}
+    entities = {"Cam","fondo", "salirBoton", "startGame", "titulo"}
 }
 
 fondo = {
@@ -15,7 +15,7 @@ fondo = {
         Name = "FondoMenuArmas",
         Image = "fondoMenuArmas.png",
         Position = {0,0},
-        Size = {1000,700}
+        Size = {1440,810}
     }
 }
 
@@ -36,9 +36,32 @@ salirBoton = {
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
-        Position = {0.450,0.85},
+        Position = {0.465,0.75},
         Size = {100,50},
         CallBackFunction = "Back"
+    }
+}
+
+startGame = {
+    Active = true,
+
+    Components = {"StartGameButton", "Button"},
+
+    BackButton = {},
+
+    Button = {
+        Active = true,
+        Enable = true,
+        Style = "WindowsLook/Button",
+        Name  = "StartGameButton",
+        Text  = "Play",
+        TLColor = "FF000000",
+        TRColor = "FF000000",
+        BLColor = "FF000000",
+        BRColor = "FF000000",
+        Position = {0.465,0.875},
+        Size = {100,50},
+        CallBackFunction = "StartGame"
     }
 }
 
@@ -55,7 +78,7 @@ titulo = {
         Style= "WindowsLook/StaticImage",
         Name = "TituloArmas",
         Image = "TituloArmas.png",
-        Position = {0.151,0.05},
+        Position = {0.195,0.05},
         Size = {697,90}
     }
 }

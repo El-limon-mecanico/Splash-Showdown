@@ -173,6 +173,7 @@
     <ClCompile Include="..\..\Src\PlayerMovement.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
+    <ClCompile Include="..\..\Src\StartGameButton.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\BackButton.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="..\..\Src\Health.h" />
     <ClInclude Include="..\..\Src\PlayerMovement.h" />
     <ClInclude Include="..\..\Src\PlayButton.h" />
+    <ClInclude Include="..\..\Src\StartGameButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
