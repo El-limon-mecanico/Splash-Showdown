@@ -9,13 +9,14 @@ PlayerMovement::~PlayerMovement() {
 
 bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de errores
 {
-    movSpeed_ = readVariable<float>(parameterTable, "MovSpeed");
-    rotSpeed_ = readVariable<float>(parameterTable, "RotSpeed");
-    movSpeedLimit_ = readVariable<float>(parameterTable, "MovSpeedLimit");
-    rotSpeedLimit_ = readVariable<float>(parameterTable, "RotSpeedLimit");
-    turretSpeed_ = readVariable<float>(parameterTable, "TurretSpeed");
-    turretLeft_ = (SDL_Scancode)readVariable<int>(parameterTable, "TurretLeftKey");
-    turretRight_ = (SDL_Scancode)readVariable<int>(parameterTable, "TurretRightKey");
+    readVariable<float>(parameterTable, "MovSpeed", &movSpeed_);
+    readVariable<float>(parameterTable, "RotSpeed", &rotSpeed_);
+    readVariable<float>(parameterTable, "MovSpeedLimit", &movSpeedLimit_);
+	readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
+    readVariable<float>(parameterTable, "TurretSpeed", &turretSpeed_);
+    
+    readVariable<SDL_Scancode>(parameterTable, "TurretLeftKey", &turretLeft_);
+    readVariable<SDL_Scancode>(parameterTable, "TurretRightKey", &turretRight_);
 
     rb_ = entity_->getComponent<Rigidbody>();
     tr_ = entity_->transform();

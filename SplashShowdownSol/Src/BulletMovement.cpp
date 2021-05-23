@@ -4,8 +4,9 @@
 
 bool BulletMovement::init(luabridge::LuaRef parameterTable)
 {
-	speed_ = readVariable<float>(parameterTable, "BulletSpeed");
-	LuaRef dirAux = readVariable<LuaRef>(parameterTable, "AuxDir");
+	readVariable<float>(parameterTable, "BulletSpeed", &speed_);
+	LuaRef dirAux = NULL;
+	readVariable<LuaRef>(parameterTable, "AuxDir", &dirAux);
 	dir_ = Vector3D(dirAux[1], dirAux[2], dirAux[3]);
 
 	return true;
