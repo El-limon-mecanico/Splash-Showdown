@@ -13,5 +13,6 @@ StartGameButton::StartGameButton(QuackEntity* e)
 void StartGameButton::botonPulsado()
 {
 	std::cout << "Agarrate que nos vamos de escena\n";
-	SceneMng::Instance()->loadScene("scenes/Partida.lua", "Partida");
+		
+	SceneMng::Instance()->loadScene("scenes/Partida1.lua", "Partida1");
 }

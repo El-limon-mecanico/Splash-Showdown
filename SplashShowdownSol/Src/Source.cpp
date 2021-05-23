@@ -26,7 +26,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<BackButton>();
 		FactoryManager::instance()->add<StartGameButton>();
 		
-		QuackEnginePro::Instance()->start("scenes/Partida.lua", "Partida");
+		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 
 	return 0;
