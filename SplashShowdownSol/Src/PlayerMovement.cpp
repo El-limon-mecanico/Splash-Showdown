@@ -7,24 +7,31 @@ PlayerMovement::~PlayerMovement() {
     delete tr_;
 }
 
-bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de errores
+bool PlayerMovement::init(luabridge::LuaRef parameterTable)
 {
-    readVariable<float>(parameterTable, "MovSpeed", &movSpeed_);
-    readVariable<float>(parameterTable, "RotSpeed", &rotSpeed_);
-    readVariable<float>(parameterTable, "MovSpeedLimit", &movSpeedLimit_);
-	readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
-    readVariable<float>(parameterTable, "TurretSpeed", &turretSpeed_);
+    bool correct = true;
+
+    correct &= readVariable<float>(parameterTable, "MovSpeed", &movSpeed_);
+    correct &= readVariable<float>(parameterTable, "RotSpeed", &rotSpeed_);
+    correct &= readVariable<float>(parameterTable, "MovSpeedLimit", &movSpeedLimit_);
+	correct &= readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
+    correct &= readVariable<float>(parameterTable, "TurretSpeed", &turretSpeed_);
 
     int aux;
-    readVariable<int>(parameterTable, "TurretLeftKey", &aux);
+    correct &= readVariable<int>(parameterTable, "TurretLeftKey", &aux);
     turretLeft_ = (SDL_Scancode)aux;
-    readVariable<int>(parameterTable, "TurretRightKey", &aux);
+    correct &= readVariable<int>(parameterTable, "TurretRightKey", &aux);
     turretRight_ = (SDL_Scancode)aux;;
 
-    rb_ = entity_->getComponent<Rigidbody>();
-    tr_ = entity_->transform();
+    if (!correct) return false;
 
     return true;
+}
+
+void PlayerMovement::start()
+{
+    rb_ = entity_->getComponent<Rigidbody>();
+    tr_ = entity_->transform();
 }
 
 void PlayerMovement::move() {

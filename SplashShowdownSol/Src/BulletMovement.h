@@ -4,8 +4,11 @@
 class BulletMovement : public Component
 {
 private:
+	//Variables leidas por .lua
+	float speed_ = 3.0;
+
+	//Otras variables
 	Vector3D dir_;
-	float speed_;
 
 public:
 	BulletMovement() {};
