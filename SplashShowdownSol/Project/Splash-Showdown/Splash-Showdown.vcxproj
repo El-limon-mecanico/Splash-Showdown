@@ -172,6 +172,7 @@
     <ClCompile Include="..\..\Src\Health.cpp" />
     <ClCompile Include="..\..\Src\PlayerMovement.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
+    <ClCompile Include="..\..\Src\Shoot.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
     <ClCompile Include="..\..\Src\StartGameButton.cpp" />
   </ItemGroup>
@@ -183,6 +184,7 @@
     <ClInclude Include="..\..\Src\Health.h" />
     <ClInclude Include="..\..\Src\PlayerMovement.h" />
     <ClInclude Include="..\..\Src\PlayButton.h" />
+    <ClInclude Include="..\..\Src\Shoot.h" />
     <ClInclude Include="..\..\Src\StartGameButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

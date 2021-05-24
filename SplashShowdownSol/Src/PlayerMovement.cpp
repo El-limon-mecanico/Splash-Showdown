@@ -4,7 +4,7 @@
 
 PlayerMovement::~PlayerMovement() {
     delete rb_;
-    delete tr_;
+    rb_ = nullptr;
 }
 
 bool PlayerMovement::init(luabridge::LuaRef parameterTable)
@@ -14,7 +14,7 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable)
     correct &= readVariable<float>(parameterTable, "MovSpeed", &movSpeed_);
     correct &= readVariable<float>(parameterTable, "RotSpeed", &rotSpeed_);
     correct &= readVariable<float>(parameterTable, "MovSpeedLimit", &movSpeedLimit_);
-	correct &= readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
+    correct &= readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
     correct &= readVariable<float>(parameterTable, "TurretSpeed", &turretSpeed_);
 
     int aux;
@@ -31,7 +31,6 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable)
 void PlayerMovement::start()
 {
     rb_ = entity_->getComponent<Rigidbody>();
-    tr_ = entity_->transform();
 }
 
 void PlayerMovement::move() {
@@ -62,19 +61,19 @@ void PlayerMovement::rotate() {
 
 void PlayerMovement::rotateTurret() {
     if (InputManager::Instance()->getKey(turretLeft_)) {
-        tr_->getChild(0)->transform()->Rotate(Vector3D(0, 0, turretSpeed_)
+        transform->getChild(0)->transform()->Rotate(Vector3D(0, 0, turretSpeed_)
             * QuackEnginePro::Instance()->time()->deltaTime());
     }
     else if (InputManager::Instance()->getKey(turretRight_)) {
-        tr_->getChild(0)->transform()->Rotate(Vector3D(0, 0, -turretSpeed_)
+        transform->getChild(0)->transform()->Rotate(Vector3D(0, 0, -turretSpeed_)
             * QuackEnginePro::Instance()->time()->deltaTime());
     }
 }
 
 void PlayerMovement::update()
 {
-	move();
-	rotate();
+    move();
+    rotate();
     rotateTurret();
 }
 

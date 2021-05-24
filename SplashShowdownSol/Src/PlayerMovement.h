@@ -3,7 +3,6 @@
 #include "InputManager.h"
 #include "Rigidbody.h"
 
-
 class PlayerMovement : public Component
 {
 private:
@@ -13,12 +12,11 @@ private:
 	float movSpeedLimit_ = 10.0;
 	float rotSpeedLimit_ = 10.0;
 	float turretSpeed_ = 55.0;
-	Rigidbody* rb_ = nullptr;
-	Transform* tr_ = nullptr;
 	SDL_Scancode turretLeft_ = SDL_SCANCODE_Q;
 	SDL_Scancode turretRight_ = SDL_SCANCODE_E;
 
 	//Otras variables
+	Rigidbody* rb_ = nullptr;
 	Vector3D vX_ = Vector3D(0, 0, 0);
 	Vector3D aX_ = Vector3D(0, 0, 0);
 
