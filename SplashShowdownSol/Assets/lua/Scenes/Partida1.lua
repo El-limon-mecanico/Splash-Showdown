@@ -49,7 +49,7 @@ tanque1 = {
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
+        RotationConstrains = {1,0,1}
     },
 
     PlayerMovement = {
@@ -104,7 +104,7 @@ tanque2 = {
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
+        RotationConstrains = {1,0,1}
     },
 
     Children = {
