@@ -185,7 +185,7 @@ arbol = {
     },
 
     MeshRenderer = {
-        Mesh = "Arbol.mesh",
+        Mesh = "arbol.mesh",
     },
 
     Rigidbody = {
