@@ -17,4 +17,6 @@ public:
 	virtual void start();
 
 	static std::string GetName() { return "ChangeWeaponButton"; }
+
+	bool getWeapon() { return exploviseWeapon; }
 };
