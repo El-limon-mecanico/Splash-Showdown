@@ -165,6 +165,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Src\Agente.cpp" />
     <ClCompile Include="..\..\Src\BackButton.cpp" />
     <ClCompile Include="..\..\Src\Bounce.cpp" />
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
@@ -176,6 +177,7 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Src\Agente.h" />
     <ClInclude Include="..\..\Src\BackButton.h" />
     <ClInclude Include="..\..\Src\Bounce.h" />
     <ClInclude Include="..\..\Src\BulletMovement.h" />

@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\IA">
+      <UniqueIdentifier>{0e28cf74-5d60-4a8b-98ee-f29e1bb18e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\IA">
+      <UniqueIdentifier>{ba9b4bae-b9f9-4710-9eb5-7f77eb2a4caa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Source.cpp">
@@ -42,6 +48,9 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Agente.cpp">
+      <Filter>Archivos de origen\IA</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Bounce.h">
@@ -67,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\StartGameButton.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Agente.h">
+      <Filter>Archivos de encabezado\IA</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
