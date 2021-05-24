@@ -36,7 +36,7 @@ salirBoton = {
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
-        Position = {0.465,0.75},
+        Position = {0.465,0.875},
         Size = {100,50},
         CallBackFunction = "Back"
     }
@@ -59,7 +59,7 @@ startGame = {
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
-        Position = {0.465,0.875},
+        Position = {0.465,0.75},
         Size = {100,50},
         CallBackFunction = "StartGame"
     }
