@@ -235,7 +235,7 @@ rotondaCentral = {
     },
 
     MeshRenderer = {
-        Mesh = "RotondaCentral.mesh",
+        Mesh = "rotondaCentral.mesh",
     },
 
     Rigidbody = {
