@@ -3,8 +3,9 @@
 #include <QuackEnginePro.h>
 
 PlayerMovement::~PlayerMovement() {
-    delete rb_;
-    delete tr_;
+	//TODO esto se elimina mal, hay que arreglarlo
+    //delete rb_;
+    //delete tr_;
 }
 
 bool PlayerMovement::init(luabridge::LuaRef parameterTable) //TODO: Manejo de errores

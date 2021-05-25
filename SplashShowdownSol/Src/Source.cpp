@@ -9,6 +9,9 @@
 #include "BackButton.h"
 #include "StartGameButton.h"
 #include "ChangeWeaponButton.h"
+#include "Pause.h"
+#include "ResumeButton.h"
+
 
 #if (defined _DEBUG)
 int main() {
@@ -27,6 +30,8 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<BackButton>();
 		FactoryManager::instance()->add<StartGameButton>();
 		FactoryManager::instance()->add<ChangeWeaponButton>();
+		FactoryManager::instance()->add<Pause>();
+		FactoryManager::instance()->add<ResumeButton>();
 		
 		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}

@@ -1,6 +1,6 @@
 ﻿Partida2 = {
     entities = {"defaultCamera", "suelo", "base1", "base2", "diagonal1", "diagonal2", "tobogan1", "tobogan2",
-                "rotondaCentral", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight"}
+                "rotondaCentral", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
 }
 
 suelo = {
@@ -450,4 +450,15 @@ tobogan2 = {
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },
+}
+
+pausa = {
+    Active = true,
+
+    Components = {"Pause"},
+
+    Pause = {
+        SceneRoute = "scenes/pausa.lua",
+        SceneName = "pausa"
+    }
 }

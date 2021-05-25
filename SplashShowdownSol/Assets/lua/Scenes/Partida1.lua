@@ -1,6 +1,6 @@
 ﻿Partida1 = {
-    entities = {"defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3", "diagonal4", "base1", "base2",
-                "cubo1","cubo2","cubo3","cubo4", "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight"}
+    entities = {"defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3", "diagonal4", "base1", "base2", "cubo1","cubo2","cubo3",
+                "cubo4", "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
 }
 
 suelo = {
@@ -175,7 +175,6 @@ sceneLight = {
     }
 }
 
-
 arbol = {
     Active = true,
 
@@ -200,7 +199,6 @@ arbol = {
         RotationConstrains = {0,0,0}
     },
 }
-
 
 diagonal1 = {
     Active = true,
@@ -301,7 +299,6 @@ diagonal4 = {
         RotationConstrains = {0,0,0}
     },
 }
-
 
 base1 = {
     Active = true,
@@ -503,7 +500,6 @@ pared2 = {
     },
 }
 
-
 pared3 = {
     Active = true,
 
@@ -552,4 +548,15 @@ pared4 = {
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },
+}
+
+pausa = {
+    Active = true,
+    
+    Components = {"Pause"},
+
+    Pause = {
+        SceneRoute = "scenes/pausa.lua",
+        SceneName = "pausa"
+    }
 }
