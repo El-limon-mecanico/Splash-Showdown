@@ -173,6 +173,7 @@
     <ClCompile Include="..\..\Src\Health.cpp" />
     <ClCompile Include="..\..\Src\Pause.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
+    <ClCompile Include="..\..\Src\Ricochet.cpp" />
     <ClCompile Include="..\..\Src\ResumeButton.cpp" />
     <ClCompile Include="..\..\Src\PlayerController.cpp" />
     <ClCompile Include="..\..\Src\Shoot.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="..\..\Src\ResumeButton.h" />
     <ClInclude Include="..\..\Src\PlayerController.h" />
     <ClInclude Include="..\..\Src\PlayButton.h" />
+    <ClInclude Include="..\..\Src\Ricochet.h" />
     <ClInclude Include="..\..\Src\Shoot.h" />
     <ClInclude Include="..\..\Src\StartGameButton.h" />
   </ItemGroup>

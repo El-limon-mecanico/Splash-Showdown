@@ -30,7 +30,7 @@ suelo = {
 
 tanque1 = {
     Active = true,
-
+    Tag = "pato",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement", "Shoot"},
 
     Transform = {
@@ -91,7 +91,7 @@ tanque1 = {
 
 tanque2 = {
     Active = true,
-
+    Tag = "pato",
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {

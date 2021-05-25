@@ -5,6 +5,7 @@
 #include "PlayerController.h"
 #include "BulletMovement.h"
 #include "Shoot.h"
+#include "Ricochet.h"
 #include "PlayButton.h"
 #include "ExitButton.h"
 #include "BackButton.h"
@@ -12,6 +13,7 @@
 #include "ChangeWeaponButton.h"
 #include "Pause.h"
 #include "ResumeButton.h"
+
 
 
 #if (defined _DEBUG)
@@ -27,6 +29,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<PlayerController>();
 		FactoryManager::instance()->add<BulletMovement>();
 		FactoryManager::instance()->add<Shoot>();
+		FactoryManager::instance()->add<Ricochet>();
 		FactoryManager::instance()->add<PlayButton>();
 		FactoryManager::instance()->add<ExitButton>();
 		FactoryManager::instance()->add<BackButton>();
