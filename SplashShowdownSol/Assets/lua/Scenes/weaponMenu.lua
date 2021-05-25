@@ -1,5 +1,5 @@
 ﻿weaponMenu = {
-    entities = {"Cam","fondo", "salirBoton", "startGame", "titulo"}
+    entities = {"Cam","fondo", "salirBoton", "startGame", "titulo", "current", "explosiveWeapon", "bouncingWeapon", "weaponButton"}
 }
 
 fondo = {
@@ -47,7 +47,7 @@ startGame = {
 
     Components = {"StartGameButton", "Button"},
 
-    BackButton = {},
+    StartGameButton = {},
 
     Button = {
         Active = true,
@@ -104,4 +104,78 @@ Cam = {
         FarClipDistance = 100000,
         ProjectionType = "Perspective"
     },
+}
+
+current = {
+    Active = true,
+
+    Components = {"Image"},
+
+    Image = {
+        Active = true,
+        Background = false,
+        Border = false,
+        Style= "WindowsLook/StaticImage",
+        Name = "currentWeapon",
+        Image = "currentWeapon.png",
+        Position = {0.11,0.4},
+        Size = {454,58}
+    }
+}
+
+explosiveWeapon = {
+    Active = true,
+
+    Components = {"Image"},
+
+    Image = {
+        Active = true,
+        Background = false,
+        Border = false,
+        Style= "WindowsLook/StaticImage",
+        Name = "explosiveShot",
+        Image = "explosiveShot.png",
+        Position = {0.54,0.4},
+        Size = {401,64}
+    }
+}
+
+bouncingWeapon = {
+    Active = false,
+
+    Components = {"Image"},
+
+    Image = {
+        Active = true,
+        Background = false,
+        Border = false,
+        Style= "WindowsLook/StaticImage",
+        Name = "bouncingShot",
+        Image = "bouncingShot.png",
+        Position = {0.54,0.4},
+        Size = {395,71}
+    }
+}
+
+weaponButton = {
+    Active = true,
+
+    Components = {"ChangeWeaponButton", "Button"},
+
+    ChangeWeaponButton = {},
+
+    Button = {
+        Active = true,
+        Enable = true,
+        Style = "WindowsLook/Button",
+        Name  = "ChangeWeaponButton",
+        Text  = "Change weapon",
+        TLColor = "FF000000",
+        TRColor = "FF000000",
+        BLColor = "FF000000",
+        BRColor = "FF000000",
+        Position = {0.465,0.625},
+        Size = {100,50},
+        CallBackFunction = "ChangeWeapon"
+    }
 }
