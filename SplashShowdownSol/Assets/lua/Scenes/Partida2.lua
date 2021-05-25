@@ -146,11 +146,14 @@ defaultCamera = {
         Name = "MainCam",
         Background = {0.6,0.8,1},
         LookAt = {0,0,0},
-        Width = 0,
-        Height = 0,
+        Width = 1,
+        Height = 1,
+        xProp = 16,
+        yProp = 9,
         NearClipDistance = 1,
         FarClipDistance = 100000,
-        ProjectionType = "Perspective"
+        ProjectionType = "Perspective",
+        zOrder = 0
     }
 }
 
