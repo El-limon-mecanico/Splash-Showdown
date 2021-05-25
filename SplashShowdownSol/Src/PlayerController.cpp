@@ -77,7 +77,7 @@ void PlayerController::shoot()
     if (InputManager::Instance()->getKeyDown(shootKey_)) {
         Vector3D dir = transform->getChild(0)->transform()->up * -1;
         Vector3D pos = transform->getChild(0)->transform()->position();
-        entity_->getComponent<Shoot>()->shootBullet(dir.normalize(), pos + dir.normalize() + Vector3D(.0, .0, .0));
+        entity_->getComponent<Shoot>()->shootBullet(dir.normalize(), pos + dir.normalize() + Vector3D(.0, -.5, .0));
     }
 }
 
