@@ -20,9 +20,7 @@ bool Ricochet::init(luabridge::LuaRef parameterTable)
 
 	bounces_ = bouncesMax_;
 
-	if (!correct) return false;
-
-	return true;
+	return correct;
 }
 
 void Ricochet::start()
