@@ -44,7 +44,7 @@ tanque1 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Hull",
         Mass = 1,
         Trigger = false,
         Static = false,
@@ -59,8 +59,14 @@ tanque1 = {
         RotSpeedLimit = 10,
         TurretSpeed = 55,
         TurretLeftKey = 20,
-        TurretRightKey = 8
+        TurretRightKey = 8,
+        ShootKey = 21
     },
+
+    Shoot = {
+        BulletPrefab = "Entities/BulletExample.lua",
+        Speed = 10.0
+    }
     
     Children = {
         entities = {"cabeza1"},
@@ -99,7 +105,7 @@ tanque2 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Hull",
         Mass = 1,
         Trigger = false,
         Static = false,
