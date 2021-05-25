@@ -31,7 +31,7 @@ suelo = {
 tanque1 = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement", "Shoot"},
 
     Transform = {
         Position = {11,2,0},
@@ -44,12 +44,12 @@ tanque1 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Hull",
         Mass = 1,
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
+        RotationConstrains = {1,0,1}
     },
 
     PlayerMovement = {
@@ -59,7 +59,12 @@ tanque1 = {
         RotSpeedLimit = 10,
         TurretSpeed = 55,
         TurretLeftKey = 20,
-        TurretRightKey = 8
+        TurretRightKey = 8,
+        ShootKey = 21
+    },
+
+    Shoot = {
+        BulletPrefabRoute = "Entities/BulletExample.lua"
     },
 
     Children = {
@@ -99,12 +104,12 @@ tanque2 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Hull",
         Mass = 1,
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
+        RotationConstrains = {1,0,1}
     },
 
     Children = {
