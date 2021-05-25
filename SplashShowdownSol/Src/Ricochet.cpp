@@ -36,7 +36,9 @@ void Ricochet::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D nor
 
 	if (other->tag() == "pato") {
 		//other->getComponent<Health>()->setHealth(1);    //TODO hacer que pierda vida bien
-		std::cout << entity_->name() <<": AAAA RESIBI UN BALASO \n";
+		std::cout << entity_->name() <<": AAAA RESIBI UN BALASO \n"; 
+		entity_->destroy();
+		return;
 	}
 
 	if (bounces_ < 0) {
