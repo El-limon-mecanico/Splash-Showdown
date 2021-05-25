@@ -4,10 +4,12 @@
 
 bool Pause::init(luabridge::LuaRef parameterTable)
 {
-	readVariable(parameterTable, "SceneRoute", &pauseSceneRoute);
-	readVariable(parameterTable, "SceneName", &pauseSceneName);
+	bool correct = true;
+	
+	correct &= readVariable(parameterTable, "SceneRoute", &pauseSceneRoute);
+	correct &= readVariable(parameterTable, "SceneName", &pauseSceneName);
 
-	return true;
+	return correct;
 }
 
 void Pause::update()
