@@ -2,6 +2,7 @@
 #include "Component.h"
 
 class BulletMovement;
+class DealDamage;
 
 class Ricochet :
     public Component
@@ -13,6 +14,7 @@ private:
     //otras variables
     int bounces_;
     BulletMovement* bM_ = nullptr;
+    DealDamage* dealDmg_ = nullptr;
 
 
 public:

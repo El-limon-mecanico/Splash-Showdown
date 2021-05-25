@@ -31,7 +31,7 @@ suelo = {
 tanque1 = {
     Active = true,
     Tag = "pato",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement", "Shoot"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement", "Shoot", "Health"},
 
     Transform = {
         Position = {11,2,0},
@@ -86,13 +86,17 @@ tanque1 = {
                 Mesh = "PatoCabeza.mesh"
             }
         }
+    },
+
+    Health = {
+        HitPoints = 50
     }
 }
 
 tanque2 = {
     Active = true,
     Tag = "pato",
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
 
     Transform = {
         Position = {-11,2,0},
@@ -131,6 +135,10 @@ tanque2 = {
                 Mesh = "PatoCabezaMorado.mesh"
             }
         }
+    },
+
+    Health = {
+        HitPoints = 50;
     }
 }
 

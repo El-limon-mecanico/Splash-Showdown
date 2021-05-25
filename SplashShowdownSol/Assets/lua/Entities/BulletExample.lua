@@ -1,7 +1,7 @@
 Bullet = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Ricochet"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Ricochet", "DealDamage"},
 
     Transform = {
         Position = {0,0,0},
@@ -29,5 +29,9 @@ Bullet = {
 
     Ricochet = {
         BouncesMax = 5
+    },
+
+    DealDamage= {
+        Damage = 20        
     }
 }
