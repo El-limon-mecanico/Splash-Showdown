@@ -168,11 +168,14 @@
     <ClCompile Include="..\..\Src\BackButton.cpp" />
     <ClCompile Include="..\..\Src\Bounce.cpp" />
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
+    <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
-    <ClCompile Include="..\..\Src\PlayerController.cpp" />
+    <ClCompile Include="..\..\Src\Pause.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
     <ClCompile Include="..\..\Src\Ricochet.cpp" />
+    <ClCompile Include="..\..\Src\ResumeButton.cpp" />
+    <ClCompile Include="..\..\Src\PlayerController.cpp" />
     <ClCompile Include="..\..\Src\Shoot.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
     <ClCompile Include="..\..\Src\StartGameButton.cpp" />
@@ -181,8 +184,11 @@
     <ClInclude Include="..\..\Src\BackButton.h" />
     <ClInclude Include="..\..\Src\Bounce.h" />
     <ClInclude Include="..\..\Src\BulletMovement.h" />
+    <ClInclude Include="..\..\Src\ChangeWeaponButton.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Health.h" />
+    <ClInclude Include="..\..\Src\Pause.h" />
+    <ClInclude Include="..\..\Src\ResumeButton.h" />
     <ClInclude Include="..\..\Src\PlayerController.h" />
     <ClInclude Include="..\..\Src\PlayButton.h" />
     <ClInclude Include="..\..\Src\Ricochet.h" />

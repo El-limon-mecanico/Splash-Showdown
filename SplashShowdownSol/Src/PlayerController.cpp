@@ -25,9 +25,7 @@ bool PlayerController::init(luabridge::LuaRef parameterTable)
     correct &= readVariable<int>(parameterTable, "ShootKey", &aux);
     shootKey_ = (SDL_Scancode)aux;;
 
-    if (!correct) return false;
-
-    return true;
+    return correct;
 }
 
 void PlayerController::start()
