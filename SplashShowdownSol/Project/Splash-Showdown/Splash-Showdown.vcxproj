@@ -170,7 +170,7 @@
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
-    <ClCompile Include="..\..\Src\PlayerMovement.cpp" />
+    <ClCompile Include="..\..\Src\PlayerController.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
     <ClCompile Include="..\..\Src\Shoot.cpp" />
     <ClCompile Include="..\..\Src\Source.cpp" />
@@ -182,7 +182,7 @@
     <ClInclude Include="..\..\Src\BulletMovement.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Health.h" />
-    <ClInclude Include="..\..\Src\PlayerMovement.h" />
+    <ClInclude Include="..\..\Src\PlayerController.h" />
     <ClInclude Include="..\..\Src\PlayButton.h" />
     <ClInclude Include="..\..\Src\Shoot.h" />
     <ClInclude Include="..\..\Src\StartGameButton.h" />

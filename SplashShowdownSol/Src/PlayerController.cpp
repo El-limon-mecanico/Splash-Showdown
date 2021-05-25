@@ -1,13 +1,13 @@
-#include "PlayerMovement.h"
+#include "PlayerController.h"
 #include "QuackEntity.h"
 #include <QuackEnginePro.h>
+#include "Shoot.h"
 
-PlayerMovement::~PlayerMovement() {
-    delete rb_;
+PlayerController::~PlayerController() {
     rb_ = nullptr;
 }
 
-bool PlayerMovement::init(luabridge::LuaRef parameterTable)
+bool PlayerController::init(luabridge::LuaRef parameterTable)
 {
     bool correct = true;
 
@@ -19,21 +19,23 @@ bool PlayerMovement::init(luabridge::LuaRef parameterTable)
 
     int aux;
     correct &= readVariable<int>(parameterTable, "TurretLeftKey", &aux);
-    turretLeft_ = (SDL_Scancode)aux;
+    turretLeftKey_ = (SDL_Scancode)aux;
     correct &= readVariable<int>(parameterTable, "TurretRightKey", &aux);
-    turretRight_ = (SDL_Scancode)aux;;
+    turretRightKey_ = (SDL_Scancode)aux;;
+    correct &= readVariable<int>(parameterTable, "ShootKey", &aux);
+    shootKey_ = (SDL_Scancode)aux;;
 
     if (!correct) return false;
 
     return true;
 }
 
-void PlayerMovement::start()
+void PlayerController::start()
 {
     rb_ = entity_->getComponent<Rigidbody>();
 }
 
-void PlayerMovement::move() {
+void PlayerController::move() {
     //Fuerza a 0
     Vector3D aux = rb_->velocity();
     aux.y = 0.0f;
@@ -46,7 +48,7 @@ void PlayerMovement::move() {
     }
 }
 
-void PlayerMovement::rotate() {
+void PlayerController::rotate() {
     //Torsion a 0
     Vector3D aux = rb_->angularVelocity();
     aux.x = aux.z = 0.0f;
@@ -59,27 +61,30 @@ void PlayerMovement::rotate() {
     }
 }
 
-void PlayerMovement::rotateTurret() {
-    if (InputManager::Instance()->getKey(turretLeft_)) {
+void PlayerController::rotateTurret() {
+    if (InputManager::Instance()->getKey(turretLeftKey_)) {
         transform->getChild(0)->transform()->Rotate(Vector3D(0, 0, turretSpeed_)
             * QuackEnginePro::Instance()->time()->deltaTime());
     }
-    else if (InputManager::Instance()->getKey(turretRight_)) {
+    else if (InputManager::Instance()->getKey(turretRightKey_)) {
         transform->getChild(0)->transform()->Rotate(Vector3D(0, 0, -turretSpeed_)
             * QuackEnginePro::Instance()->time()->deltaTime());
     }
 }
 
-void PlayerMovement::update()
+void PlayerController::shoot()
+{
+    if (InputManager::Instance()->getKeyDown(shootKey_)) {
+        Vector3D dir = transform->getChild(0)->transform()->up * -1;
+        Vector3D pos = transform->getChild(0)->transform()->position();
+        entity_->getComponent<Shoot>()->shootBullet(dir.normalize(), pos + dir.normalize() + Vector3D(.0, .0, .0));
+    }
+}
+
+void PlayerController::update()
 {
     move();
     rotate();
     rotateTurret();
+    shoot();
 }
-
-//void PlayerMovement::fixedUpdate()
-//{
-//    rb_->clearForce();
-//    move();
-//    rotate();
-//}

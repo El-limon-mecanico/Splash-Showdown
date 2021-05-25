@@ -12,18 +12,18 @@ bool Shoot::init(luabridge::LuaRef parameterTable)
 	return true;
 }
 
-void Shoot::start()
+void Shoot::shootBullet(Vector3D dir, Vector3D pos)
 {
-	headTr_ = transform->getChild(0)->transform();
-}
-
-void Shoot::shootBullet()
-{
-	cont++;
-	std::string name = "Bullet" + entity_->name() + std::to_string(cont);
+	cont_++;
+	std::string aux = std::to_string(cont_);
+	std::string aux2 = entity_->name();
+	std::string name = "bullet_" + aux2 + "_" + aux;
+	std::cout << name;
 
 	QuackEntity* bullet = SceneMng::Instance()->getCurrentScene()->createEntityByPrefab(bulletPrefabFile_, "Bullet", name);
 
-	bullet->getComponent<BulletMovement>()->setDir(headTr_->up);
-	bullet->getComponent<Transform>()->setGlobalPosition(headTr_->position());
+	if (bullet != nullptr) {
+		bullet->getComponent<BulletMovement>()->setDir(dir);
+		bullet->transform()->setGlobalPosition(pos);
+	}
 }

@@ -3,17 +3,19 @@
 #include "InputManager.h"
 #include "Rigidbody.h"
 
-class PlayerMovement : public Component
+class PlayerController : public Component
 {
 private:
+
 	//Variables leidas por .lua
 	float movSpeed_ = 15.0;
 	float rotSpeed_ = 2.5;
 	float movSpeedLimit_ = 10.0;
 	float rotSpeedLimit_ = 10.0;
 	float turretSpeed_ = 55.0;
-	SDL_Scancode turretLeft_ = SDL_SCANCODE_Q;
-	SDL_Scancode turretRight_ = SDL_SCANCODE_E;
+	SDL_Scancode turretLeftKey_ = SDL_SCANCODE_Q;
+	SDL_Scancode turretRightKey_ = SDL_SCANCODE_E;
+	SDL_Scancode shootKey_ = SDL_SCANCODE_R;
 
 	//Otras variables
 	Rigidbody* rb_ = nullptr;
@@ -23,15 +25,15 @@ private:
 	void move();
 	void rotate();
 	void rotateTurret();
+	void shoot();
 
 public:
-	PlayerMovement() {};
-	~PlayerMovement();
+	PlayerController() {};
+	~PlayerController();
 
 	virtual bool init(luabridge::LuaRef parameterTable = { nullptr });
 	void start();
 	void update();
-	//void fixedUpdate();
 
 	static std::string GetName() { return "PlayerMovement"; }
 };

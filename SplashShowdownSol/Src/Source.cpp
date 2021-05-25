@@ -2,7 +2,7 @@
 #include "FactoryManager.h"
 
 #include "FactoryManager.h"
-#include "PlayerMovement.h"
+#include "PlayerController.h"
 #include "BulletMovement.h"
 #include "Shoot.h"
 #include "PlayButton.h"
@@ -20,7 +20,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 
 	// TODO: AQUI FALTA MANEJO DE ERRORES Y EXCEPCIONES
 	if (QuackEnginePro::Init("Splash Showdown")) {
-		FactoryManager::instance()->add<PlayerMovement>();
+		FactoryManager::instance()->add<PlayerController>();
 		FactoryManager::instance()->add<BulletMovement>();
 		FactoryManager::instance()->add<Shoot>();
 		FactoryManager::instance()->add<PlayButton>();
