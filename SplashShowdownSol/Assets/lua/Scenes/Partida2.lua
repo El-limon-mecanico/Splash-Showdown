@@ -31,7 +31,7 @@ suelo = {
 tanque1 = {
     Active = true,
     Tag = "pato",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement", "Shoot", "Health"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
 
     Transform = {
         Position = {11,2,0},
@@ -52,7 +52,7 @@ tanque1 = {
         RotationConstrains = {1,0,1}
     },
 
-    PlayerMovement = {
+    PlayerController = {
         MovSpeed = 15,
         RotSpeed = 2.5,
         MovSpeedLimit = 10,

@@ -171,6 +171,7 @@
     <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp" />
     <ClCompile Include="..\..\Src\DealDamage.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
+    <ClCompile Include="..\..\Src\Explode.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
     <ClCompile Include="..\..\Src\Pause.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="..\..\Src\ChangeWeaponButton.h" />
     <ClInclude Include="..\..\Src\DealDamage.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
+    <ClInclude Include="..\..\Src\Explode.h" />
     <ClInclude Include="..\..\Src\Health.h" />
     <ClInclude Include="..\..\Src\Pause.h" />
     <ClInclude Include="..\..\Src\ResumeButton.h" />

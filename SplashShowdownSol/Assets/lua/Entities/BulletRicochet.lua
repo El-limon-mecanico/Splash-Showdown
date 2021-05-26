@@ -28,10 +28,10 @@ Bullet = {
     },
 
     Ricochet = {
-        BouncesMax = 5
+        BouncesMax = 4
     },
 
     DealDamage= {
-        Damage = 20        
+        Damage = 15        
     }
 }

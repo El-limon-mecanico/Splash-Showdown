@@ -66,6 +66,9 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp">
       <Filter>Archivos de origen\Botones</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\Explode.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Bounce.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Src\ChangeWeaponButton.h">
       <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Explode.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
