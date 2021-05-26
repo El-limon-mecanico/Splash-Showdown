@@ -2,6 +2,7 @@
 #include "BulletMovement.h"
 #include "QuackEntity.h"
 #include "Health.h"
+#include "DealDamage.h"
 
 Ricochet::Ricochet()
 {
@@ -10,6 +11,7 @@ Ricochet::Ricochet()
 Ricochet::~Ricochet()
 {
 	bM_ = nullptr;
+	dealDmg_ = nullptr;
 }
 
 bool Ricochet::init(luabridge::LuaRef parameterTable)
@@ -26,6 +28,7 @@ bool Ricochet::init(luabridge::LuaRef parameterTable)
 void Ricochet::start()
 {
 	bM_ = entity_->getComponent<BulletMovement>();
+	dealDmg_ = entity_->getComponent<DealDamage>();
 }
 
 void Ricochet::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal)
@@ -33,9 +36,9 @@ void Ricochet::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D nor
 	bounces_--;
 
 	if (other->tag() == "pato") {
-		//other->getComponent<Health>()->setHealth(1);    //TODO hacer que pierda vida bien
-		std::cout << entity_->name() <<": AAAA RESIBI UN BALASO \n"; 
-		entity_->destroy();
+		std::cout << other->name() << ": AAAA RESIBI UN BALASO \n";
+		dealDmg_->dealDamage(other->getComponent<Health>());
+		entity_->destroy();	//borramos la bala
 		return;
 	}
 
