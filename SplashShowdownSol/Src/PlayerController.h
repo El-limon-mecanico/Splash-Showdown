@@ -35,5 +35,5 @@ public:
 	void start();
 	void update();
 
-	static std::string GetName() { return "PlayerMovement"; }
+	static std::string GetName() { return "PlayerController"; }
 };
