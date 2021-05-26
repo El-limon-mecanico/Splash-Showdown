@@ -1,5 +1,5 @@
 ﻿pausa = {
-    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo"}
+    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo", "sonidoBoton"}
 }
 
 fondo = {
@@ -19,12 +19,25 @@ fondo = {
     }
 }
 
+sonidoBoton = {
+    Active = true,
+
+    Components = {"AudioSource"},
+
+    AudioSource = {
+        Source = "bong_001.ogg",
+        Volume = 1,
+        Loops = 0,
+        Enable = true
+    }
+}
+
 playBoton = {
     Active = true,
 
     Components = {"ResumeButton", "Button"},
 
-    PlayButton = {},
+    ResumeButton = {},
 
     Button = {
         Active = true,
@@ -55,7 +68,7 @@ salirBoton = {
         Enable = true,
         Style = "WindowsLook/Button",
         Name  = "ButtonBack",
-        Text  = "Exit",
+        Text  = "Main Menu",
         TLColor = "FF000000",
         TRColor = "FF000000",
         BLColor = "FF000000",
