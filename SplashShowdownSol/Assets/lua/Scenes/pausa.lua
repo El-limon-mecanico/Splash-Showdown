@@ -37,7 +37,7 @@ playBoton = {
 
     Components = {"ResumeButton", "Button"},
 
-    PlayButton = {},
+    ResumeButton = {},
 
     Button = {
         Active = true,
