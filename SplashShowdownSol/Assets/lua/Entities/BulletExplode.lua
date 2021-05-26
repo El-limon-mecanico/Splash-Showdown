@@ -37,6 +37,7 @@ Bullet = {
 
     AudioSource = {
         Source = "explode.wav",
-        Volume = 3.0
+        Volume = 3.0,
+        Enabled = true
     }
 }

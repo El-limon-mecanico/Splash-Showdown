@@ -3,6 +3,8 @@
 #include "Health.h"
 #include "DealDamage.h"
 #include "AudioSource.h"
+#include "Rigidbody.h"
+#include "MeshRenderer.h"
 
 Explode::~Explode()
 {
@@ -12,6 +14,15 @@ Explode::~Explode()
 void Explode::start()
 {
 	dealDmg_ = entity_->getComponent<DealDamage>();
+	audio_ = entity_->getComponent<AudioSource>();
+}
+
+void Explode::update()
+{
+	if (destroy && !audio_->isPlaying()) {
+		entity_->destroy();
+		std::cout << "Explode: Destroy bullet\n";
+	}
 }
 
 void Explode::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal)
@@ -21,7 +32,8 @@ void Explode::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D norm
 		dealDmg_->dealDamage(other->getComponent<Health>());
 	}
 
-	std::cout << entity_->name() << ": Colision\n";
-	entity_->getComponent<AudioSource>()->play();
-	entity_->destroy();
+	entity_->getComponent<Rigidbody>()->setEnable(false);
+	entity_->getComponent<MeshRenderer>()->setEnable(false);
+	audio_->play();
+	destroy = true;
 }
