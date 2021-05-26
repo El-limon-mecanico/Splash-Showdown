@@ -28,9 +28,10 @@ bool Health::receiveDamage(int dmg)
 
 		//cambiar de escena
 		//TODO diferenciar entre jugador y IA, pero la ia aun no está
-		// if(jugador)
-			//SceneMng::Instance()->loadScene("scenes/endOfRoundMenuLose.lua", "endOfRoundMenuLose");
-		//else
+		std::cout << entity_->tag() << "\n";
+		 if(entity_->tag() == "player")
+			SceneMng::Instance()->loadScene("scenes/endOfRoundMenuLose.lua", "endOfRoundMenuLose");
+		else if(entity_->tag() == "enemy")
 			SceneMng::Instance()->loadScene("scenes/endOfRoundMenuWin.lua", "endOfRoundMenuWin");
 	}
 	return alive;

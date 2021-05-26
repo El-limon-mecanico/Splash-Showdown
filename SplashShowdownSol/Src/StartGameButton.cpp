@@ -35,7 +35,17 @@ void StartGameButton::botonPulsado()
 	//cargar distintas escenas segun el arma
 	int mapa = rand() % 2;
 	if(mapa == 1)
-		SceneMng::Instance()->loadScene("scenes/Partida1.lua", "Partida1");
+	{
+		if(explosiveWeapon)
+			SceneMng::Instance()->loadScene("scenes/Partida1Explosion.lua", "Partida1Explosion");
+		else
+			SceneMng::Instance()->loadScene("scenes/Partida1Rebote.lua", "Partida1Rebote");
+	}
 	else
-		SceneMng::Instance()->loadScene("scenes/Partida2.lua", "Partida2");
+	{
+		if(explosiveWeapon)
+			SceneMng::Instance()->loadScene("scenes/Partida2Explosion.lua", "Partida2Explosion");
+		else
+			SceneMng::Instance()->loadScene("scenes/Partida2Rebote.lua", "Partida2Rebote");
+	}
 }
