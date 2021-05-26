@@ -1,9 +1,10 @@
 #pragma once
 #include "Component.h"
+
 class Health : public Component
 {
 private:
-	int health_;
+	int health_ = 100;
 
 public:
 	Health(QuackEntity* e = nullptr);
@@ -14,6 +15,7 @@ public:
 	int getHealth() { return health_; }
 	void setHealth(int health) { health_ = health; }
 
+	bool init(luabridge::LuaRef parameterTable = { nullptr }) override;
 
-	//virtual bool init(luabridge::LuaRef parameterTable = { nullptr });
+	bool receiveDamage(int dmg);
 };

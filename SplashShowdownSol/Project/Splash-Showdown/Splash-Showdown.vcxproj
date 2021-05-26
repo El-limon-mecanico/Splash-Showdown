@@ -169,6 +169,7 @@
     <ClCompile Include="..\..\Src\Bounce.cpp" />
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
     <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp" />
+    <ClCompile Include="..\..\Src\DealDamage.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
     <ClCompile Include="..\..\Src\Pause.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="..\..\Src\Bounce.h" />
     <ClInclude Include="..\..\Src\BulletMovement.h" />
     <ClInclude Include="..\..\Src\ChangeWeaponButton.h" />
+    <ClInclude Include="..\..\Src\DealDamage.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Health.h" />
     <ClInclude Include="..\..\Src\Pause.h" />
