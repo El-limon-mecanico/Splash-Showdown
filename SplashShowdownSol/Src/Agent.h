@@ -8,7 +8,7 @@ struct Steering {
 	float angular = 0.0f;
 };
 
-class Agente : public Component
+class Agent : public Component
 {
 private:
 	std::map<int, std::list<Steering>> groups;
@@ -17,35 +17,37 @@ private:
 	Steering getSteeringByPriority();
 
 protected:
-	bool combineByWeight_ = false;
-	bool combineByPrio_ = false;
-	float priorityThreshold_ = 0.2f;
-	float maxSpeed_ = 10.0f;
-	float maxAccel_ = 5.0f;
-	float maxRotation_ = 90.0f;
-	float maxAngularAccel_ = 5.0f;
-	float orientation_ = 0.0f;
-	float angularSpeed_ = 0.0f;
+	bool combineByWeight = false;
+	bool combineByPrio = false;
+	float priorityThreshold = 0.2f;
+	float maxSpeed = 10.0f;
+	float maxAccel = 5.0f;
+	float maxAngularSpeed = 90.0f;
+	float maxAngularAccel = 5.0f;
+	float orientation = 0.0f;
+	float angularSpeed = 0.0f;
 	
 	Steering steering_;
-	Vector3D speed{ 0.0f, 0.0f, 0.0f };
+	Vector3D speed_{ 0.0f, 0.0f, 0.0f };
 
 public:
-	Agente();
-	virtual ~Agente();
+	Agent();
+	virtual ~Agent();
 
 	virtual bool init(luabridge::LuaRef parameterTable = { nullptr }) override;
+
+	static std::string GetName() { return "Agent"; }
 
 	virtual void start();
 	virtual void fixedUpdate();
 	virtual void update();
 	virtual void lateUpdate();
 
-	inline float getOrientation() { return orientation_; }
-	inline Vector3D getOrientationAsVec3() { return OriToVec(orientation_); }
+	inline float getOrientation() { return orientation; }
+	inline Vector3D getLookAt() { return FloatToLookAt(orientation); }
 	virtual void setSteering(Steering newSteering);
 	virtual void setSteering(Steering newSteering, float weight);
 	virtual void setSteering(Steering newSteering, int priority);
 
-	static Vector3D OriToVec(float orientation);
+	static Vector3D FloatToLookAt(float orientation);
 };

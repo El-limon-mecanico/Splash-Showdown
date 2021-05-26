@@ -165,10 +165,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Agente.cpp" />
+    <ClCompile Include="..\..\Src\Agent.cpp" />
     <ClCompile Include="..\..\Src\BackButton.cpp" />
     <ClCompile Include="..\..\Src\Bounce.cpp" />
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
+    <ClCompile Include="..\..\Src\AgentBehaviour.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
     <ClCompile Include="..\..\Src\PlayerMovement.cpp" />
@@ -177,10 +178,11 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Agente.h" />
+    <ClInclude Include="..\..\Src\Agent.h" />
     <ClInclude Include="..\..\Src\BackButton.h" />
     <ClInclude Include="..\..\Src\Bounce.h" />
     <ClInclude Include="..\..\Src\BulletMovement.h" />
+    <ClInclude Include="..\..\Src\AgentBehaviour.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Health.h" />
     <ClInclude Include="..\..\Src\PlayerMovement.h" />

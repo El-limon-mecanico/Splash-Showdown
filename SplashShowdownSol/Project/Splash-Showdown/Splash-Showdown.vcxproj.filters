@@ -48,7 +48,10 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Agente.cpp">
+    <ClCompile Include="..\..\Src\Agent.cpp">
+      <Filter>Archivos de origen\IA</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\AgentBehaviour.cpp">
       <Filter>Archivos de origen\IA</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,7 +80,10 @@
     <ClInclude Include="..\..\Src\StartGameButton.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Agente.h">
+    <ClInclude Include="..\..\Src\Agent.h">
+      <Filter>Archivos de encabezado\IA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\AgentBehaviour.h">
       <Filter>Archivos de encabezado\IA</Filter>
     </ClInclude>
   </ItemGroup>
