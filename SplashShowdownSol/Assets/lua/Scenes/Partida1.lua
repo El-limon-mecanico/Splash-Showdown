@@ -88,7 +88,7 @@ tanque1 = {
 
             AudioSource = {
                 Source = "duck.wav",
-                Volume = 0.8,
+                Volume = 0.4,
                 Loops = 0,
                 Enabled = true
             }
