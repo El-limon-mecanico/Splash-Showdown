@@ -28,7 +28,7 @@ Bullet = {
     },
 
     Ricochet = {
-        BouncesMax = 5
+        BouncesMax = 4
     },
 
     DealDamage= {

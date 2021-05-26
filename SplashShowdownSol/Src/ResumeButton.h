@@ -1,10 +1,14 @@
 #pragma once
 #include "Component.h"
 
+class AudioSource;
+
 class ResumeButton : public Component
 {
 private:
 	static void botonPulsado();
+
+	static AudioSource* audioCmp;
 public:
 	ResumeButton(QuackEntity* e = nullptr);
 	~ResumeButton() {}

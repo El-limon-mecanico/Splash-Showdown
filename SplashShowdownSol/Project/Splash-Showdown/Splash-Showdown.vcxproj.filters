@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de encabezado\Botones">
+      <UniqueIdentifier>{cbf50af3-f63f-4c28-b739-679fa7bab86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Botones">
+      <UniqueIdentifier>{8e5992ee-f7c1-45b8-a339-dfd563a23de6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Source.cpp">
@@ -27,25 +33,7 @@
     <ClCompile Include="..\..\Src\Health.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\PlayButton.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\ExitButton.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\BackButton.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\StartGameButton.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\Pause.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\ResumeButton.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Src\Shoot.cpp">
@@ -60,6 +48,27 @@
     <ClCompile Include="..\..\Src\DealDamage.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Src\BackButton.cpp">
+      <Filter>Archivos de origen\Botones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp">
+      <Filter>Archivos de origen\Botones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\ExitButton.cpp">
+      <Filter>Archivos de origen\Botones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\PlayButton.cpp">
+      <Filter>Archivos de origen\Botones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\ResumeButton.cpp">
+      <Filter>Archivos de origen\Botones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\StartGameButton.cpp">
+      <Filter>Archivos de origen\Botones</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Src\Explode.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Src\Bounce.h">
@@ -71,25 +80,7 @@
     <ClInclude Include="..\..\Src\Health.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\PlayButton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\ExitButton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\BackButton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\StartGameButton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\ChangeWeaponButton.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\Pause.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\ResumeButton.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\Shoot.h">
@@ -102,6 +93,27 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Src\DealDamage.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\BackButton.h">
+      <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\ExitButton.h">
+      <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\PlayButton.h">
+      <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\ResumeButton.h">
+      <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\StartGameButton.h">
+      <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\ChangeWeaponButton.h">
+      <Filter>Archivos de encabezado\Botones</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Src\Explode.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

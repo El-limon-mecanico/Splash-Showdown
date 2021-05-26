@@ -6,6 +6,7 @@
 #include "BulletMovement.h"
 #include "Shoot.h"
 #include "Ricochet.h"
+#include "Explode.h"
 #include "Health.h"
 #include "DealDamage.h"
 #include "PlayButton.h"
@@ -32,6 +33,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<BulletMovement>();
 		FactoryManager::instance()->add<Shoot>();
 		FactoryManager::instance()->add<Ricochet>();
+		FactoryManager::instance()->add<Explode>();
 		FactoryManager::instance()->add<DealDamage>();
 		FactoryManager::instance()->add<Health>();
 		FactoryManager::instance()->add<PlayButton>();
