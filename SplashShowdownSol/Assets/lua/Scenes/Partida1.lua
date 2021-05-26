@@ -44,7 +44,7 @@ tanque1 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
@@ -64,7 +64,7 @@ tanque1 = {
     },
 
     Shoot = {
-        BulletPrefabRoute = "Entities/BulletExample.lua",
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
         Speed = 10.0
     },
     
@@ -109,12 +109,17 @@ tanque2 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
         RotationConstrains = {1,0,1}
+    },
+
+    
+    Health = {
+        HitPoints = 50
     },
 
     Children = {
@@ -135,10 +140,6 @@ tanque2 = {
                 Mesh = "PatoCabezaMorado.mesh"
             }
         }
-    },
-
-    Health = {
-        HitPoints = 50;
     }
 }
 

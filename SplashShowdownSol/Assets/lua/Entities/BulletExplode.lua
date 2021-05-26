@@ -1,17 +1,17 @@
 Bullet = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Ricochet", "DealDamage"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Explode", "DealDamage"},
 
     Transform = {
         Position = {0,0,0},
-        Scale = {0.2,0.2,0.2},
+        Scale = {0.3,0.3,0.3},
         Rotation = {0,0,0}
     },
 
     MeshRenderer = {
         Mesh = "Sphere",
-        Material = "Tanques/Rojo"
+        Material = "Tanques/Verde"
     },
 
     Rigidbody = {
@@ -24,14 +24,14 @@ Bullet = {
     },
 
     BulletMovement = {
-        BulletSpeed = 10.0
+        BulletSpeed = 7.0
     },
 
-    Ricochet = {
-        BouncesMax = 5
+    Explode = {
+        Enabled = true
     },
 
     DealDamage= {
-        Damage = 20        
+        Damage = 30        
     }
 }

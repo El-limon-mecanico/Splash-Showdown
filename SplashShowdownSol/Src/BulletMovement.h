@@ -22,8 +22,6 @@ public:
 	void start();
 	void update();
 
-	//void onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal);
-
 	Vector3D getDir() { return dir_; }
 	void setDir(Vector3D d) { dir_ = d; }
 	float getSpeed() { return speed_; }
