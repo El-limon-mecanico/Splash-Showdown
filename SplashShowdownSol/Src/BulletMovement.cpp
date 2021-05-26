@@ -11,9 +11,7 @@ bool BulletMovement::init(luabridge::LuaRef parameterTable)
 	bool correct = true;
 	correct &= readVariable<float>(parameterTable, "BulletSpeed", &speed_);
 
-	if (!correct) return false;
-
-	return true;
+	return correct;
 }
 
 void BulletMovement::start()
