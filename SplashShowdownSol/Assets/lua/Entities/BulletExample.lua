@@ -1,7 +1,7 @@
 Bullet = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Ricochet", "DealDamage"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Ricochet", "DealDamage", "AudioSource"},
 
     Transform = {
         Position = {0,0,0},
@@ -33,5 +33,12 @@ Bullet = {
 
     DealDamage= {
         Damage = 20        
+    },
+
+    AudioSource = {
+        Source = "bounce.wav",
+        Volume = 1,
+        Loops = 0,
+        Enabled = true
     }
 }
