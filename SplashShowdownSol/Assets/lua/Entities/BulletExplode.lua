@@ -1,7 +1,7 @@
 Bullet = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Explode", "DealDamage"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "BulletMovement", "Explode", "DealDamage", "AudioSource"},
 
     Transform = {
         Position = {0,0,0},
@@ -33,5 +33,10 @@ Bullet = {
 
     DealDamage= {
         Damage = 30        
+    },
+
+    AudioSource = {
+        Source = "explode.wav",
+        Volume = 3.0
     }
 }

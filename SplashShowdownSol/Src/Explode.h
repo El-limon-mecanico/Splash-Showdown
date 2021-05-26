@@ -9,7 +9,6 @@ private:
     //Otras variables
     DealDamage* dealDmg_ = nullptr;
 
-
 public:
     Explode() {};
     ~Explode();

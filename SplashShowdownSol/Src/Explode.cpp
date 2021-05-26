@@ -2,6 +2,7 @@
 #include "QuackEntity.h"
 #include "Health.h"
 #include "DealDamage.h"
+#include "AudioSource.h"
 
 Explode::~Explode()
 {
@@ -28,5 +29,6 @@ void Explode::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D norm
 	}
 
 	std::cout << entity_->name() << ": Colision\n";
+	entity_->getComponent<AudioSource>()->play();
 	entity_->destroy();
 }
