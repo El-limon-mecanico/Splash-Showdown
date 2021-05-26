@@ -74,22 +74,22 @@
     <LinkIncremental>true</LinkIncremental>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -165,11 +165,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Src\Agent.cpp" />
     <ClCompile Include="..\..\Src\BackButton.cpp" />
     <ClCompile Include="..\..\Src\Bounce.cpp" />
     <ClCompile Include="..\..\Src\BulletMovement.cpp" />
-    <ClCompile Include="..\..\Src\AgentBehaviour.cpp" />
     <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp" />
     <ClCompile Include="..\..\Src\DealDamage.cpp" />
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
@@ -185,11 +183,9 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Src\Agent.h" />
     <ClInclude Include="..\..\Src\BackButton.h" />
     <ClInclude Include="..\..\Src\Bounce.h" />
     <ClInclude Include="..\..\Src\BulletMovement.h" />
-    <ClInclude Include="..\..\Src\AgentBehaviour.h" />
     <ClInclude Include="..\..\Src\ChangeWeaponButton.h" />
     <ClInclude Include="..\..\Src\DealDamage.h" />
     <ClInclude Include="..\..\Src\ExitButton.h" />
@@ -202,6 +198,13 @@
     <ClInclude Include="..\..\Src\Ricochet.h" />
     <ClInclude Include="..\..\Src\Shoot.h" />
     <ClInclude Include="..\..\Src\StartGameButton.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Splash-Showdown.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Assets\iconoPatos.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

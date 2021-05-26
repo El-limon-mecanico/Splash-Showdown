@@ -39,7 +39,7 @@ void IATank::update()
 {
 	if (target)
 	{
-		if()
+		if (LookAtToFloat(target->position()));
 	}
 }
 

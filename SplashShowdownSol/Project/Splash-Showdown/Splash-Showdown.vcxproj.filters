@@ -45,12 +45,6 @@
     <ClCompile Include="..\..\Src\StartGameButton.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Src\Agent.cpp">
-      <Filter>Archivos de origen\IA</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Src\AgentBehaviour.cpp">
-      <Filter>Archivos de origen\IA</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Src\ChangeWeaponButton.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -98,12 +92,6 @@
     <ClInclude Include="..\..\Src\StartGameButton.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Src\Agent.h">
-      <Filter>Archivos de encabezado\IA</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Src\AgentBehaviour.h">
-      <Filter>Archivos de encabezado\IA</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Src\ChangeWeaponButton.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -128,5 +116,18 @@
     <ClInclude Include="..\..\Src\IATank.h">
       <Filter>Archivos de encabezado\IA</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Splash-Showdown.rc">
+      <Filter>Archivos de recursos</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Assets\iconoPatos.ico">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
 </Project>
