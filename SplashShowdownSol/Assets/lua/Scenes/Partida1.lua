@@ -222,7 +222,7 @@ diagonal1 = {
     Transform = {
         Position = {4,0,4},
         Scale = {50,50,50},
-        Rotation = {0,45,0}
+        Rotation = {-90,-45,0}
     },
 
     MeshRenderer = {
@@ -247,7 +247,7 @@ diagonal2 = {
     Transform = {
         Position = {-4,0,-4},
         Scale = {50,50,50},
-        Rotation = {0,45,0}
+        Rotation = {-90,-45,0}
     },
 
     MeshRenderer = {
@@ -272,7 +272,7 @@ diagonal3 = {
     Transform = {
         Position = {-4,0,4},
         Scale = {50,50,50},
-        Rotation = {0,-45,0}
+        Rotation = {-90,45,0}
     },
 
     MeshRenderer = {
@@ -297,7 +297,7 @@ diagonal4 = {
     Transform = {
         Position = {4,0,-4},
         Scale = {50,50,50},
-        Rotation = {0,-45,0}
+        Rotation = {-90,45,0}
     },
 
     MeshRenderer = {
@@ -322,7 +322,7 @@ base1 = {
     Transform = {
         Position = {9,0,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -347,7 +347,7 @@ base2 = {
     Transform = {
         Position = {-9,0,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -372,7 +372,7 @@ cubo1 = {
     Transform = {
         Position = {5,0,0},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -397,7 +397,7 @@ cubo2 = {
     Transform = {
         Position = {-5,0,0},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -422,7 +422,7 @@ cubo3 = {
     Transform = {
         Position = {0,0,5},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -447,7 +447,7 @@ cubo4 = {
     Transform = {
         Position = {0,0,-5},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
