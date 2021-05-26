@@ -1,5 +1,5 @@
 ﻿mainMenu = {
-    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo"}
+    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo", "sonidoBoton"}
 }
 
 fondo = {
@@ -17,6 +17,19 @@ fondo = {
         Position = {0,0},
         Size = {1440,810}
     }
+}
+
+sonidoBoton = {
+    Active = true,
+    
+    Components = {"AudioSource"},
+
+    AudioSource = {
+        Source = "bong_001.ogg",
+        Volume = 1,
+        Loops = 0,
+        Enable = true
+    }    
 }
 
 playBoton = {

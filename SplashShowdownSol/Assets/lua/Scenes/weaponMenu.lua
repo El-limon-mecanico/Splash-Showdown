@@ -1,5 +1,5 @@
 ﻿weaponMenu = {
-    entities = {"Cam","fondo", "salirBoton", "startGame", "titulo", "current", "explosiveWeapon", "bouncingWeapon", "weaponButton"}
+    entities = {"Cam","fondo", "salirBoton", "startGame", "titulo", "current", "explosiveWeapon", "bouncingWeapon", "weaponButton", "sonidoBoton"}
 }
 
 fondo = {
@@ -18,6 +18,20 @@ fondo = {
         Size = {1440,810}
     }
 }
+
+sonidoBoton = {
+    Active = true,
+
+    Components = {"AudioSource"},
+
+    AudioSource = {
+        Source = "bong_001.ogg",
+        Volume = 1,
+        Loops = 0,
+        Enable = true
+    }
+}
+
 
 salirBoton = {
     Active = true,

@@ -1,5 +1,5 @@
-﻿endOfRoundMenu = {
-    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo"}
+﻿endOfRoundMenuLose = {
+    entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo", "sonidoBoton"}
 }
 
 fondo = {
@@ -65,6 +65,18 @@ salirBoton = {
         CallBackFunction = "Back"
     }
 }
+sonidoBoton = {
+    Active = true,
+
+    Components = {"AudioSource"},
+
+    AudioSource = {
+        Source = "bong_001.ogg",
+        Volume = 1,
+        Loops = 0,
+        Enable = true
+    }
+}
 
 
 titulo = {
@@ -77,10 +89,10 @@ titulo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "YouWin",
-        Image = "YouWin.png",
-        Position = {0.22,0.10},
-        Size = {623,154}
+        Name = "YouLose",
+        Image = "YouLose.png",
+        Position = {0.21,0.10},
+        Size = {660,156}
     }
 }
 

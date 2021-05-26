@@ -1,4 +1,4 @@
-﻿pausa = {
+﻿endOfRoundMenuWin = {
     entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo", "sonidoBoton"}
 }
 
@@ -12,8 +12,8 @@ fondo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "FondoPausa",
-        Image = "fondoPausa.png",
+        Name = "FondoMenuEntreRondas",
+        Image = "fondoMenuEntreRondas.png",
         Position = {0,0},
         Size = {1440,810}
     }
@@ -35,7 +35,7 @@ sonidoBoton = {
 playBoton = {
     Active = true,
 
-    Components = {"ResumeButton", "Button"},
+    Components = {"PlayButton", "Button"},
 
     PlayButton = {},
 
@@ -44,14 +44,14 @@ playBoton = {
         Enable = true,
         Style = "WindowsLook/Button",
         Name  = "ButtonPlay",
-        Text  = "Resume",
+        Text  = "New game",
         TLColor = "FF000000",
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
         Position = {0.465,0.5},
         Size = {100,50},
-        CallBackFunction = "ResumeGame"
+        CallBackFunction = "Play"
     }
 }
 
@@ -67,8 +67,8 @@ salirBoton = {
         Active = true,
         Enable = true,
         Style = "WindowsLook/Button",
-        Name  = "ButtonBack",
-        Text  = "Exit",
+        Name  = "ButtonMainMenu",
+        Text  = "MainMenu",
         TLColor = "FF000000",
         TRColor = "FF000000",
         BLColor = "FF000000",
@@ -90,10 +90,10 @@ titulo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "TituloPausa",
-        Image = "tituloPausa.png",
-        Position = {0.300,0.10},
-        Size = {514,134}
+        Name = "YouWin",
+        Image = "YouWin.png",
+        Position = {0.22,0.10},
+        Size = {623,154}
     }
 }
 

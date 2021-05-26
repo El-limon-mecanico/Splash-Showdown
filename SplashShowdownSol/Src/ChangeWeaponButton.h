@@ -1,11 +1,16 @@
 #pragma once
 #include "Component.h"
+
+class AudioSource;
+
 class ChangeWeaponButton : public Component
 {
 private:
 	static void botonPulsado();
 
 	static bool exploviseWeapon;
+
+	static AudioSource* audioCmp;
 
 	static void setImages();
 public:

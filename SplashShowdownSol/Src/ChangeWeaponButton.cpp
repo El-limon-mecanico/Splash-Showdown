@@ -1,8 +1,9 @@
 #include "ChangeWeaponButton.h"
 #include "CallBacks.h"
 #include "SceneMng.h"
+#include "AudioSource.h"
 
-
+AudioSource* ChangeWeaponButton::audioCmp;
 bool ChangeWeaponButton::exploviseWeapon;
 
 ChangeWeaponButton::ChangeWeaponButton(QuackEntity* e)
@@ -18,13 +19,20 @@ void ChangeWeaponButton::start()
 	else
 		exploviseWeapon = false;
 
+	audioCmp = SceneMng::Instance()->getCurrentScene()->getObjectWithName("sonidoBoton")
+		->getComponent<AudioSource>();
+
 	setImages();
 }
 
 
 void ChangeWeaponButton::botonPulsado()
 {
-	exploviseWeapon = !exploviseWeapon;	
+	exploviseWeapon = !exploviseWeapon;
+
+	audioCmp->play();
+	while (audioCmp->isPlaying()); //esperamos a que termine el sonido para cambiar
+	
 	setImages();
 }
 
