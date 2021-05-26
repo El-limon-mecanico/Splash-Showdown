@@ -1,5 +1,6 @@
 #include "Health.h"
 #include "QuackEntity.h"
+#include "SceneMng.h"
 
 Health::Health(QuackEntity* e) : Component(e)
 {
@@ -24,6 +25,9 @@ bool Health::receiveDamage(int dmg)
 	{
 		//entity_->destroy();
 		std::cout << entity_->name() << ": Me he muerto :c\n";
+
+		//cambiar de escena
+		SceneMng::Instance()->loadScene("scenes/endOfRoundMenu.lua", "endOfRoundMenu");
 	}
 	return alive;
 }
