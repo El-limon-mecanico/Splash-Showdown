@@ -9,13 +9,6 @@ Explode::~Explode()
 	dealDmg_ = nullptr;
 }
 
-bool Explode::init(luabridge::LuaRef parameterTable)
-{
-	bool correct = true;
-
-	return correct;
-}
-
 void Explode::start()
 {
 	dealDmg_ = entity_->getComponent<DealDamage>();
