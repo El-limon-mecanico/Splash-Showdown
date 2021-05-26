@@ -17,6 +17,10 @@ private:
 	Steering getSteeringByPriority();
 
 protected:
+	Steering steering_;
+	Vector3D speed_{ 0.0f, 0.0f, 0.0f };
+
+public:
 	bool combineByWeight = false;
 	bool combineByPrio = false;
 	float priorityThreshold = 0.2f;
@@ -27,10 +31,6 @@ protected:
 	float orientation = 0.0f;
 	float angularSpeed = 0.0f;
 	
-	Steering steering_;
-	Vector3D speed_{ 0.0f, 0.0f, 0.0f };
-
-public:
 	Agent();
 	virtual ~Agent();
 
@@ -45,6 +45,7 @@ public:
 
 	inline float getOrientation() { return orientation; }
 	inline Vector3D getLookAt() { return FloatToLookAt(orientation); }
+	virtual Steering getSteering();
 	virtual void setSteering(Steering newSteering);
 	virtual void setSteering(Steering newSteering, float weight);
 	virtual void setSteering(Steering newSteering, int priority);

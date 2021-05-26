@@ -100,6 +100,8 @@ void Agent::lateUpdate()
 	steering_ = Steering();
 }
 
+Steering Agent::getSteering() { return steering_; }
+
 void Agent::setSteering(Steering newSteering) {
 	steering_ = newSteering;
 }
