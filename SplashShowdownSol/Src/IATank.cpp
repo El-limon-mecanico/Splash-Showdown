@@ -71,32 +71,27 @@ void IATank::rotate(float diff)
 	rigidbody_->addTorque(aux);
 
 	if (abs(aux.y) < rotSpeedLimit_) {
-		rigidbody_->addTorque({ 0, -rotSpeed_ * dir * diff, 0 });
+		rigidbody_->addTorque({ 0, 0, -rotSpeed_ * dir * diff });
 	}
-	else {
+	if(visible) {
 		Vector3D dir = torreta->transform()->up * -1;
 		Vector3D pos = torreta->transform()->position();
 		shoot->shootBullet(dir.normalize(), pos + dir.normalize() + Vector3D(.0, -.5, .0));
 	}
 }
 
-void IATank::move(Vector3D dir) {
-	//Fuerza a 0
-	Vector3D aux = rigidbody_->velocity();
-	aux.y = 0.0f;
-	rigidbody_->addForce(aux);
-
-	if (abs(aux.x) < movSpeedLimit_ && abs(aux.z) < movSpeedLimit_) {
-		Vector3D fuerza = dir * -movSpeed_;
-		rigidbody_->addForce(fuerza);
-	}
+void IATank::move(Vector3D dir)
+{
+	Vector3D vel = rigidbody_->velocity();
+	vel.y = 0.0f;
+	rigidbody_->addForce(dir.normalize() * (movSpeedLimit_ - vel.magnitude()));
 }
 
 void IATank::fixedUpdate()
 {
 	if (!rigidbody_) return;
 
-	bool visible = true;	// TODO aquí se hace la comprobación de raycast;
+	bool visible = false;	// TODO aquí se hace la comprobación de raycast;
 
 	if (visible)
 	{
@@ -111,15 +106,6 @@ void IATank::fixedUpdate()
 		}
 		move(randomDir.normalize());
 	}
-
-	rigidbody_->addForce(transform->forward * movSpeed_);
-	
-	
-	Vector3D vel = rigidbody_->velocity();
-	vel.y = 0.0f;
-	// frenar
-	if (vel.magnitude >= movSpeedLimit_)
-		rigidbody_->addForce(transform->forward * (movSpeedLimit_ - vel.magnitude));
 }
 
 void IATank::update()

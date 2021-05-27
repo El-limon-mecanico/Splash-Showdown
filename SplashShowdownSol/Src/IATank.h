@@ -31,6 +31,8 @@ private:
 	void rotate(float diff);
 	void move(Vector3D dir);
 
+	bool visible = false;
+
 public:
 	IATank();
 	~IATank() {};
