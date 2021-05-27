@@ -1,6 +1,6 @@
 // Microsoft Visual C++ generated resource script.
 //
-#include "resource.h"
+#include "resource1.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_MODERN
 
 1 TEXTINCLUDE 
 BEGIN
-    "resource.h\0"
+    "resource1.h\0"
 END
 
 2 TEXTINCLUDE 
@@ -52,7 +52,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "E:\\GitHub\\Splash-Showdown\\SplashShowdownSol\\Assets\\iconoPatos.ico"
+IDI_ICON1               ICON                    "D:\\Splash-Showdown\\SplashShowdownSol\\Assets\\iconoPatos.ico"
 
 #endif    // Español (España, alfabetización internacional) resources
 /////////////////////////////////////////////////////////////////////////////

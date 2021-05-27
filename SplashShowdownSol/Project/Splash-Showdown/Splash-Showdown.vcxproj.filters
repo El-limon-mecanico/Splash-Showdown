@@ -25,6 +25,9 @@
     <Filter Include="Archivos de origen\Botones">
       <UniqueIdentifier>{8e5992ee-f7c1-45b8-a339-dfd563a23de6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Imagenes">
+      <UniqueIdentifier>{efa70d74-fb4a-47d6-8f31-5dfbd68379db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Src\Source.cpp">
@@ -131,15 +134,18 @@
     <ClInclude Include="resource.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Assets\iconoPatos.ico">
+      <Filter>Imagenes</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Splash-Showdown.rc">
       <Filter>Archivos de recursos</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\Assets\iconoPatos.ico">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
   </ItemGroup>
 </Project>

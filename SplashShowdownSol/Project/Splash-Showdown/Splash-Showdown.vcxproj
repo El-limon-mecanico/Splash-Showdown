@@ -201,12 +201,13 @@
     <ClInclude Include="..\..\Src\Shoot.h" />
     <ClInclude Include="..\..\Src\StartGameButton.h" />
     <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Splash-Showdown.rc" />
+    <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Assets\iconoPatos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Splash-Showdown.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
