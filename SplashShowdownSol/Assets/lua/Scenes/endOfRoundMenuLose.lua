@@ -1,4 +1,4 @@
-﻿mainMenu = {
+﻿endOfRoundMenuLose = {
     entities = {"Cam","fondo", "playBoton", "salirBoton", "titulo", "sonidoBoton"}
 }
 
@@ -12,24 +12,11 @@ fondo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "FondoMenuPrincipal",
-        Image = "fondoMenuPrincipal.png",
+        Name = "FondoMenuEntreRondas",
+        Image = "fondoMenuEntreRondas.png",
         Position = {0,0},
         Size = {1440,810}
     }
-}
-
-sonidoBoton = {
-    Active = true,
-    
-    Components = {"AudioSource"},
-
-    AudioSource = {
-        Source = "bong_001.ogg",
-        Volume = 1,
-        Loops = 0,
-        Enable = true
-    }    
 }
 
 playBoton = {
@@ -38,13 +25,13 @@ playBoton = {
     Components = {"PlayButton", "Button"},
 
     PlayButton = {},
-    
+
     Button = {
         Active = true,
         Enable = true,
         Style = "WindowsLook/Button",
         Name  = "ButtonPlay",
-        Text  = "Play",
+        Text  = "New game",
         TLColor = "FF000000",
         TRColor = "FF000000",
         BLColor = "FF000000",
@@ -59,23 +46,35 @@ playBoton = {
 salirBoton = {
     Active = true,
 
-    Components = {"ExitButton", "Button"},
+    Components = {"BackButton", "Button"},
 
-    ExitButton = {},
+    BackButton = {},
 
     Button = {
         Active = true,
         Enable = true,
         Style = "WindowsLook/Button",
-        Name  = "ButtonExit",
-        Text  = "Exit",
+        Name  = "ButtonMainMenu",
+        Text  = "MainMenu",
         TLColor = "FF000000",
         TRColor = "FF000000",
         BLColor = "FF000000",
         BRColor = "FF000000",
         Position = {0.465,0.65},
         Size = {100,50},
-        CallBackFunction = "Exit"
+        CallBackFunction = "Back"
+    }
+}
+sonidoBoton = {
+    Active = true,
+
+    Components = {"AudioSource"},
+
+    AudioSource = {
+        Source = "bong_001.ogg",
+        Volume = 1,
+        Loops = 0,
+        Enable = true
     }
 }
 
@@ -90,10 +89,10 @@ titulo = {
         Background = false,
         Border = false,
         Style= "WindowsLook/StaticImage",
-        Name = "TituloPrincipal",
-        Image = "Titulo.png",
-        Position = {0.302,0.10},
-        Size = {473,200}
+        Name = "YouLose",
+        Image = "YouLose.png",
+        Position = {0.21,0.10},
+        Size = {660,156}
     }
 }
 

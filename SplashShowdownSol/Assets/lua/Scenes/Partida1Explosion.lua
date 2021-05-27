@@ -1,4 +1,4 @@
-﻿Partida1 = {
+﻿Partida1Explosion = {
     entities = {"defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3", "diagonal4", "base1", "base2", "cubo1","cubo2","cubo3",
                 "cubo4", "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
 }
@@ -30,8 +30,8 @@ suelo = {
 
 tanque1 = {
     Active = true,
-    Tag = "pato",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerMovement", "Shoot", "Health"},
+    Tag = "player",
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
 
     Transform = {
         Position = {11,2,0},
@@ -44,7 +44,7 @@ tanque1 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
@@ -52,7 +52,7 @@ tanque1 = {
         RotationConstrains = {1,0,1}
     },
 
-    PlayerMovement = {
+    PlayerController = {
         MovSpeed = 15,
         RotSpeed = 2.5,
         MovSpeedLimit = 10,
@@ -64,7 +64,7 @@ tanque1 = {
     },
 
     Shoot = {
-        BulletPrefabRoute = "Entities/BulletExample.lua",
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
         Speed = 10.0
     },
     
@@ -95,7 +95,7 @@ tanque1 = {
 
 tanque2 = {
     Active = true,
-    Tag = "pato",
+    Tag = "enemy",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "IATank", "Shoot"},
 
     Transform = {
@@ -122,12 +122,17 @@ tanque2 = {
     },
     
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
         RotationConstrains = {1,0,1}
+    },
+
+    
+    Health = {
+        HitPoints = 50
     },
 
     Children = {
@@ -148,10 +153,6 @@ tanque2 = {
                 Mesh = "PatoCabezaMorado.mesh"
             }
         }
-    },
-
-    Health = {
-        HitPoints = 50;
     }
 }
 
@@ -235,7 +236,7 @@ diagonal1 = {
     Transform = {
         Position = {4,0,4},
         Scale = {50,50,50},
-        Rotation = {0,45,0}
+        Rotation = {-90,-45,0}
     },
 
     MeshRenderer = {
@@ -260,7 +261,7 @@ diagonal2 = {
     Transform = {
         Position = {-4,0,-4},
         Scale = {50,50,50},
-        Rotation = {0,45,0}
+        Rotation = {-90,-45,0}
     },
 
     MeshRenderer = {
@@ -285,7 +286,7 @@ diagonal3 = {
     Transform = {
         Position = {-4,0,4},
         Scale = {50,50,50},
-        Rotation = {0,-45,0}
+        Rotation = {-90,45,0}
     },
 
     MeshRenderer = {
@@ -310,7 +311,7 @@ diagonal4 = {
     Transform = {
         Position = {4,0,-4},
         Scale = {50,50,50},
-        Rotation = {0,-45,0}
+        Rotation = {-90,45,0}
     },
 
     MeshRenderer = {
@@ -335,7 +336,7 @@ base1 = {
     Transform = {
         Position = {9,0,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -360,7 +361,7 @@ base2 = {
     Transform = {
         Position = {-9,0,0},
         Scale = {50,50,50},
-        Rotation = {0,90,90}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -385,7 +386,7 @@ cubo1 = {
     Transform = {
         Position = {5,0,0},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -410,7 +411,7 @@ cubo2 = {
     Transform = {
         Position = {-5,0,0},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -435,7 +436,7 @@ cubo3 = {
     Transform = {
         Position = {0,0,5},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
@@ -460,7 +461,7 @@ cubo4 = {
     Transform = {
         Position = {0,0,-5},
         Scale = {50,50,50},
-        Rotation = {0,0,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
