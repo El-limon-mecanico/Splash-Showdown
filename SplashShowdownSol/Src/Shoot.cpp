@@ -1,6 +1,7 @@
 #include "Shoot.h"
 #include "SceneMng.h"
 #include "BulletMovement.h"
+#include "AudioSource.h"
 
 bool Shoot::init(luabridge::LuaRef parameterTable)
 {
@@ -11,6 +12,11 @@ bool Shoot::init(luabridge::LuaRef parameterTable)
 	return correct;
 }
 
+void Shoot::start()
+{
+	aS_ = entity_->transform()->getChild(0)->getComponent<AudioSource>();
+}
+
 void Shoot::shootBullet(Vector3D dir, Vector3D pos)
 {
 	cont_++;
@@ -18,6 +24,8 @@ void Shoot::shootBullet(Vector3D dir, Vector3D pos)
 	std::string aux2 = entity_->name();
 	std::string name = "bullet_" + aux2 + "_" + aux;
 	std::cout << name;
+
+	aS_->play();
 
 	QuackEntity* bullet = SceneMng::Instance()->getCurrentScene()->createEntityByPrefab(bulletPrefabFile_, "Bullet", name);
 

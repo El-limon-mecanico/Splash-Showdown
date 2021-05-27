@@ -15,7 +15,8 @@ fondo = {
         Name = "FondoPausa",
         Image = "fondoPausa.png",
         Position = {0,0},
-        Size = {1440,810}
+        Size = {1440,810},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -51,7 +52,8 @@ playBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.5},
         Size = {100,50},
-        CallBackFunction = "ResumeGame"
+        CallBackFunction = "ResumeGame",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -75,7 +77,8 @@ salirBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.65},
         Size = {100,50},
-        CallBackFunction = "Back"
+        CallBackFunction = "Back",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -92,8 +95,9 @@ titulo = {
         Style= "WindowsLook/StaticImage",
         Name = "TituloPausa",
         Image = "tituloPausa.png",
-        Position = {0.300,0.10},
-        Size = {514,134}
+        Position = {0.325,0.10},
+        Size = {514,134},
+        TargetResolution = {1440,810}
     }
 }
 

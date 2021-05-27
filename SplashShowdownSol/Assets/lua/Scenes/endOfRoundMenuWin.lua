@@ -15,7 +15,8 @@ fondo = {
         Name = "FondoMenuEntreRondas",
         Image = "fondoMenuEntreRondas.png",
         Position = {0,0},
-        Size = {1440,810}
+        Size = {1440,810},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -51,7 +52,8 @@ playBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.5},
         Size = {100,50},
-        CallBackFunction = "Play"
+        CallBackFunction = "Play",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -75,7 +77,8 @@ salirBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.65},
         Size = {100,50},
-        CallBackFunction = "Back"
+        CallBackFunction = "Back",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -92,8 +95,9 @@ titulo = {
         Style= "WindowsLook/StaticImage",
         Name = "YouWin",
         Image = "YouWin.png",
-        Position = {0.22,0.10},
-        Size = {623,154}
+        Position = {0.34,0.10},
+        Size = {623,154},
+        TargetResolution = {1920,1080}
     }
 }
 

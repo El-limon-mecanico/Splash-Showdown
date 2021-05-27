@@ -26,8 +26,7 @@ int main() {
 int WINAPI
 WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdShow) {
 #endif
-
-	// TODO: AQUI FALTA MANEJO DE ERRORES Y EXCEPCIONES
+	
 	if (QuackEnginePro::Init("Splash Showdown")) {
 		FactoryManager::instance()->add<PlayerController>();
 		FactoryManager::instance()->add<BulletMovement>();
@@ -43,9 +42,11 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<ChangeWeaponButton>();
 		FactoryManager::instance()->add<Pause>();
 		FactoryManager::instance()->add<ResumeButton>();
-		
+
+		QuackEnginePro::Instance()->setFullScreen(true);
 		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
+	
 
 	return 0;
 }

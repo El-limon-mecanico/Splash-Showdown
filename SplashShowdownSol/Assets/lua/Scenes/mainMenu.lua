@@ -15,7 +15,8 @@ fondo = {
         Name = "FondoMenuPrincipal",
         Image = "fondoMenuPrincipal.png",
         Position = {0,0},
-        Size = {1440,810}
+        Size = {1440,810},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -51,7 +52,8 @@ playBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.5},
         Size = {100,50},
-        CallBackFunction = "Play"
+        CallBackFunction = "Play",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -75,7 +77,8 @@ salirBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.65},
         Size = {100,50},
-        CallBackFunction = "Exit"
+        CallBackFunction = "Exit",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -92,8 +95,9 @@ titulo = {
         Style= "WindowsLook/StaticImage",
         Name = "TituloPrincipal",
         Image = "Titulo.png",
-        Position = {0.302,0.10},
-        Size = {473,200}
+        Position = {0.340,0.10},
+        Size = {473,200},
+        TargetResolution = {1440,810}
     }
 }
 

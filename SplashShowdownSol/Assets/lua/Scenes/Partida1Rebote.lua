@@ -1,577 +1,554 @@
 ﻿Partida1Rebote = {
-entities = {"defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3", "diagonal4", "base1", "base2", "cubo1","cubo2","cubo3",
-"cubo4", "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
+    entities = {
+        "defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3",
+        "diagonal4", "base1", "base2", "cubo1", "cubo2", "cubo3", "cubo4",
+        "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2",
+        "sceneLight", "pausa"
+    }
 }
 
 suelo = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {0,-0.25,0},
-Scale = {50,50,50},
-Rotation = {0,90,90}
-},
+    Transform = {
+        Position = {0, -0.25, 0},
+        Scale = {50, 50, 50},
+        Rotation = {0, 90, 90}
+    },
 
-MeshRenderer = {
-Mesh = "Suelo.mesh",
-},
+    MeshRenderer = {Mesh = "Suelo.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 tanque1 = {
-Active = true,
-Tag = "player",
-Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
+    Active = true,
+    Tag = "player",
+    Components = {
+        "Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot",
+        "Health", "AudioSource"
+    },
 
-Transform = {
-Position = {11,2,0},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {11, 2, 0},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "PatoCuerpo.mesh"
-},
+    MeshRenderer = {Mesh = "PatoCuerpo.mesh"},
 
-Rigidbody = {
-Type = "Box",
-Mass = 1,
-Trigger = false,
-Static = false,
-PositionConstrains = {0,0,0},
-RotationConstrains = {1,0,1}
-},
+    Rigidbody = {
+        Type = "Box",
+        Mass = 1,
+        Trigger = false,
+        Static = false,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {1, 0, 1}
+    },
 
-PlayerController = {
-MovSpeed = 15,
-RotSpeed = 2.5,
-MovSpeedLimit = 10,
-RotSpeedLimit = 10,
-TurretSpeed = 55,
-TurretLeftKey = 20,
-TurretRightKey = 8,
-ShootKey = 21
-},
+    PlayerController = {
+        MovSpeed = 15,
+        RotSpeed = 2.5,
+        MovSpeedLimit = 10,
+        RotSpeedLimit = 10,
+        TurretSpeed = 100,
+        TurretLeftKey = 20,
+        TurretRightKey = 8,
+        ShootKey = 21
+    },
 
-Shoot = {
-BulletPrefabRoute = "Entities/BulletRicochet.lua",
-Speed = 10.0
-},
+    Shoot = {BulletPrefabRoute = "Entities/BulletRicochet.lua", Speed = 10.0},
 
-Children = {
-entities = {"cabeza1"},
+    Children = {
+        entities = {"cabeza1"},
 
-cabeza1 = {
-Active = true,
+        cabeza1 = {
+            Active = true,
 
-Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
 
-Transform = {
-Position = {11,2.4,0.19},
-Scale = {1,1,1},
-Rotation = {0,0,0}
-},
+            Transform = {
+                Position = {11, 2.4, 0.19},
+                Scale = {1, 1, 1},
+                Rotation = {0, 0, 0}
+            },
 
-MeshRenderer = {
-Mesh = "PatoCabeza.mesh"
-}
-}
-},
+            MeshRenderer = {Mesh = "PatoCabeza.mesh"},
 
-Health = {
-HitPoints = 50
-}
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
+            }
+        }
+    },
+
+    Health = {HitPoints = 50},
+
+    AudioSource = {
+        Source = "oof.wav",
+        Volume = 1,
+        Loops = 0,
+        Enabled = true
+    }
 }
 
 tanque2 = {
-Active = true,
-Tag = "enemy",
-Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
+    Active = true,
+    Tag = "enemy",
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "AudioSource"},
 
-Transform = {
-Position = {-11,2,0},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {-11, 2, 0},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "PatoCuerpoMorado.mesh"
-},
+    MeshRenderer = {Mesh = "PatoCuerpoMorado.mesh"},
 
-Rigidbody = {
-Type = "Box",
-Mass = 1,
-Trigger = false,
-Static = false,
-PositionConstrains = {0,0,0},
-RotationConstrains = {1,0,1}
-},
+    Rigidbody = {
+        Type = "Box",
+        Mass = 1,
+        Trigger = false,
+        Static = false,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {1, 0, 1}
+    },
 
+    Health = {HitPoints = 50},
 
-Health = {
-HitPoints = 50
-},
+    Children = {
+        entities = {"cabeza2"},
 
-Children = {
-entities = {"cabeza2"},
+        cabeza2 = {
+            Active = true,
 
-cabeza2 = {
-Active = true,
+            Components = {"Transform", "MeshRenderer"},
 
-Components = {"Transform", "MeshRenderer"},
+            Transform = {
+                Position = {-11, 2.4, 0.19},
+                Scale = {1, 1, 1},
+                Rotation = {0, 0, 0}
+            },
 
-Transform = {
-Position = {-11,2.4,0.19},
-Scale = {1,1,1},
-Rotation = {0,0,0}
-},
+            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"}
+        }
+    },
 
-MeshRenderer = {
-Mesh = "PatoCabezaMorado.mesh"
-}
-}
-}
+    AudioSource = {
+        Source = "oof.wav",
+        Volume = 1,
+        Loops = 0,
+        Enabled = true
+    }
 }
 
 defaultCamera = {
-Components = {"Transform", "Camera"},
+    Components = {"Transform", "Camera"},
 
-Transform = {
-Position = {0,17,17},
-Scale = {1,1,1},
-Rotation = {0,0,0}
-},
+    Transform = {
+        Position = {0, 17, 17},
+        Scale = {1, 1, 1},
+        Rotation = {0, 0, 0}
+    },
 
-Camera = {
-Name = "MainCam",
-Background = {0.6,0.8,1},
-LookAt = {0,0,0},
-Width = 1,
-Height = 1,
-xProp = 16,
-yProp = 9,
-NearClipDistance = 1,
-FarClipDistance = 100000,
-ProjectionType = "Perspective",
-zOrder = 0
-}
+    Camera = {
+        Name = "MainCam",
+        Background = {0.6, 0.8, 1},
+        LookAt = {0, 0, 0},
+        Width = 1,
+        Height = 1,
+        xProp = 16,
+        yProp = 9,
+        NearClipDistance = 1,
+        FarClipDistance = 100000,
+        ProjectionType = "Perspective",
+        zOrder = 0
+    }
 }
 
 sceneLight = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "Light"},
+    Components = {"Transform", "Light"},
 
-Transform = {
-Position = {-5,17,10},
-Scale = {1,1,1},
-Rotation = {0,0,0}
-},
+    Transform = {
+        Position = {-5, 17, 10},
+        Scale = {1, 1, 1},
+        Rotation = {0, 0, 0}
+    },
 
-Light = {
-LightType = 1,
-DiffuseColor = {1,1,1},
-SpecularColor = {1,1,1},
-Direction = {0,0,0},
-Distance = 100,
-InnerAngle = 30,
-OuterAngle = 90,
-isOn = true
-}
+    Light = {
+        LightType = 1,
+        DiffuseColor = {1, 1, 1},
+        SpecularColor = {1, 1, 1},
+        Direction = {0, 0, 0},
+        Distance = 100,
+        InnerAngle = 30,
+        OuterAngle = 90,
+        isOn = true
+    }
 }
 
 arbol = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {0,0,0},
-Scale = {50,50,50},
-Rotation = {0,90,90}
-},
+    Transform = {
+        Position = {0, 0, 0},
+        Scale = {50, 50, 50},
+        Rotation = {0, 90, 90}
+    },
 
-MeshRenderer = {
-Mesh = "arbol.mesh",
-},
+    MeshRenderer = {Mesh = "arbol.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 diagonal1 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {4,0,4},
-Scale = {50,50,50},
-Rotation = {-90,-45,0}
-},
+    Transform = {
+        Position = {4, 0, 4},
+        Scale = {50, 50, 50},
+        Rotation = {-90, -45, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Diagonal.mesh",
-},
+    MeshRenderer = {Mesh = "Diagonal.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 diagonal2 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {-4,0,-4},
-Scale = {50,50,50},
-Rotation = {-90,-45,0}
-},
+    Transform = {
+        Position = {-4, 0, -4},
+        Scale = {50, 50, 50},
+        Rotation = {-90, -45, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Diagonal.mesh",
-},
+    MeshRenderer = {Mesh = "Diagonal.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 diagonal3 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {-4,0,4},
-Scale = {50,50,50},
-Rotation = {-90,45,0}
-},
+    Transform = {
+        Position = {-4, 0, 4},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 45, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Diagonal.mesh",
-},
+    MeshRenderer = {Mesh = "Diagonal.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 diagonal4 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {4,0,-4},
-Scale = {50,50,50},
-Rotation = {-90,45,0}
-},
+    Transform = {
+        Position = {4, 0, -4},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 45, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Diagonal.mesh",
-},
+    MeshRenderer = {Mesh = "Diagonal.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 base1 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {9,0,0},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {9, 0, 0},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Base.mesh",
-},
+    MeshRenderer = {Mesh = "Base.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 base2 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {-9,0,0},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {-9, 0, 0},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Base.mesh",
-},
+    MeshRenderer = {Mesh = "Base.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 cubo1 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {5,0,0},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {5, 0, 0},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Cubo.mesh",
-},
+    MeshRenderer = {Mesh = "Cubo.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 cubo2 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {-5,0,0},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {-5, 0, 0},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Cubo.mesh",
-},
+    MeshRenderer = {Mesh = "Cubo.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 cubo3 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {0,0,5},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {0, 0, 5},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Cubo.mesh",
-},
+    MeshRenderer = {Mesh = "Cubo.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 cubo4 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {0,0,-5},
-Scale = {50,50,50},
-Rotation = {-90,0,0}
-},
+    Transform = {
+        Position = {0, 0, -5},
+        Scale = {50, 50, 50},
+        Rotation = {-90, 0, 0}
+    },
 
-MeshRenderer = {
-Mesh = "Cubo.mesh",
-},
+    MeshRenderer = {Mesh = "Cubo.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 pared1 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {0,0,7.5},
-Scale = {50,48.25,50},
-Rotation = {0,90,90}
-},
+    Transform = {
+        Position = {0, 0, 7.5},
+        Scale = {50, 48.25, 50},
+        Rotation = {0, 90, 90}
+    },
 
-MeshRenderer = {
-Mesh = "ParedLarga.mesh",
-},
+    MeshRenderer = {Mesh = "ParedLarga.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 pared2 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {0,0,-7.5},
-Scale = {50,50,50},
-Rotation = {0,90,90}
-},
+    Transform = {
+        Position = {0, 0, -7.5},
+        Scale = {50, 50, 50},
+        Rotation = {0, 90, 90}
+    },
 
-MeshRenderer = {
-Mesh = "ParedLarga.mesh",
-},
+    MeshRenderer = {Mesh = "ParedLarga.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 pared3 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {12.5,0,0},
-Scale = {53,50,50},
-Rotation = {0,90,90}
-},
+    Transform = {
+        Position = {12.5, 0, 0},
+        Scale = {53, 50, 50},
+        Rotation = {0, 90, 90}
+    },
 
-MeshRenderer = {
-Mesh = "ParedCorta.mesh",
-},
+    MeshRenderer = {Mesh = "ParedCorta.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 pared4 = {
-Active = true,
+    Active = true,
 
-Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
-Transform = {
-Position = {-12.5,0,0},
-Scale = {53,50,50},
-Rotation = {0,90,90}
-},
+    Transform = {
+        Position = {-12.5, 0, 0},
+        Scale = {53, 50, 50},
+        Rotation = {0, 90, 90}
+    },
 
-MeshRenderer = {
-Mesh = "ParedCorta.mesh",
-},
+    MeshRenderer = {Mesh = "ParedCorta.mesh"},
 
-Rigidbody = {
-Type = "Hull",
-Mass = 1,
-Trigger = false,
-Static = true,
-PositionConstrains = {0,0,0},
-RotationConstrains = {0,0,0}
-},
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0, 0, 0},
+        RotationConstrains = {0, 0, 0}
+    }
 }
 
 pausa = {
-Active = true,
+    Active = true,
 
-Components = {"Pause"},
+    Components = {"Pause"},
 
-Pause = {
-SceneRoute = "scenes/pausa.lua",
-SceneName = "pausa"
-}
+    Pause = {SceneRoute = "scenes/pausa.lua", SceneName = "pausa"}
 }

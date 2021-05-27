@@ -31,9 +31,10 @@ void ChangeWeaponButton::botonPulsado()
 	exploviseWeapon = !exploviseWeapon;
 
 	audioCmp->play();
-	while (audioCmp->isPlaying()); //esperamos a que termine el sonido para cambiar
 	
 	setImages();
+	
+	while (audioCmp->isPlaying()); //esperamos a que termine el sonido para cambiar
 }
 
 
