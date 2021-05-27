@@ -37,7 +37,7 @@ Bullet = {
 
     AudioSource = {
         Source = "bounce.wav",
-        Volume = 1,
+        Volume = 0.8,
         Loops = 0,
         Enabled = true
     }
