@@ -45,7 +45,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<IATank>();
 		
 
-		QuackEnginePro::Instance()->setFullScreen(false);
+		QuackEnginePro::Instance()->setFullScreen(true);
 		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 	

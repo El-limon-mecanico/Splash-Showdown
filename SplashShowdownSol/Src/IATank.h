@@ -22,7 +22,7 @@ private:
 	float turretSpeed_ = 55.0;
 
 	int currtime = 0;
-	int timebetween_ = 300;
+	int timebetween_ = 500;
 
 	float precision = 0.8f;
 
