@@ -74,22 +74,22 @@
     <LinkIncremental>true</LinkIncremental>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)bin\</OutDir>
+    <OutDir>$(SolutionDir)Quack-Engine\QuackEngineSol\bin\</OutDir>
     <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -173,6 +173,7 @@
     <ClCompile Include="..\..\Src\ExitButton.cpp" />
     <ClCompile Include="..\..\Src\Explode.cpp" />
     <ClCompile Include="..\..\Src\Health.cpp" />
+    <ClCompile Include="..\..\Src\IATank.cpp" />
     <ClCompile Include="..\..\Src\Pause.cpp" />
     <ClCompile Include="..\..\Src\PlayButton.cpp" />
     <ClCompile Include="..\..\Src\Ricochet.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="..\..\Src\ExitButton.h" />
     <ClInclude Include="..\..\Src\Explode.h" />
     <ClInclude Include="..\..\Src\Health.h" />
+    <ClInclude Include="..\..\Src\IATank.h" />
     <ClInclude Include="..\..\Src\Pause.h" />
     <ClInclude Include="..\..\Src\ResumeButton.h" />
     <ClInclude Include="..\..\Src\PlayerController.h" />
@@ -198,6 +200,14 @@
     <ClInclude Include="..\..\Src\Ricochet.h" />
     <ClInclude Include="..\..\Src\Shoot.h" />
     <ClInclude Include="..\..\Src\StartGameButton.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Assets\iconoPatos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Splash-Showdown.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
