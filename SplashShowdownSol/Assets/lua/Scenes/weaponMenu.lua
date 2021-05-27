@@ -15,7 +15,8 @@ fondo = {
         Name = "FondoMenuArmas",
         Image = "fondoMenuArmas.png",
         Position = {0,0},
-        Size = {1440,810}
+        Size = {1440,810},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -52,7 +53,8 @@ salirBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.875},
         Size = {100,50},
-        CallBackFunction = "Back"
+        CallBackFunction = "Back",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -75,7 +77,8 @@ startGame = {
         BRColor = "FF000000",
         Position = {0.465,0.75},
         Size = {100,50},
-        CallBackFunction = "StartGame"
+        CallBackFunction = "StartGame",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -92,8 +95,9 @@ titulo = {
         Style= "WindowsLook/StaticImage",
         Name = "TituloArmas",
         Image = "TituloArmas.png",
-        Position = {0.195,0.05},
-        Size = {697,90}
+        Position = {0.27,0.05},
+        Size = {697,90},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -132,8 +136,9 @@ current = {
         Style= "WindowsLook/StaticImage",
         Name = "currentWeapon",
         Image = "currentWeapon.png",
-        Position = {0.11,0.4},
-        Size = {454,58}
+        Position = {0.20,0.4},
+        Size = {454,58},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -150,7 +155,8 @@ explosiveWeapon = {
         Name = "explosiveShot",
         Image = "explosiveShot.png",
         Position = {0.54,0.4},
-        Size = {401,64}
+        Size = {401,64},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -167,7 +173,8 @@ bouncingWeapon = {
         Name = "bouncingShot",
         Image = "bouncingShot.png",
         Position = {0.54,0.4},
-        Size = {395,71}
+        Size = {395,71},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -190,6 +197,7 @@ weaponButton = {
         BRColor = "FF000000",
         Position = {0.465,0.625},
         Size = {100,50},
-        CallBackFunction = "ChangeWeapon"
+        CallBackFunction = "ChangeWeapon",
+        TargetResolution = {1440,810}
     }
 }
