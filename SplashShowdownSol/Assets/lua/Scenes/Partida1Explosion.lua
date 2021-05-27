@@ -99,7 +99,7 @@ tanque2 = {
     Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "IATank", "Shoot"},
 
     Transform = {
-        Position = {-11,2,0},
+        Position = {-11,0.6,0},
         Scale = {50,50,50},
         Rotation = {-90,0,0}
     },
@@ -126,7 +126,7 @@ tanque2 = {
         Mass = 1,
         Trigger = false,
         Static = false,
-        PositionConstrains = {0,0,0},
+        PositionConstrains = {0,1,0},
         RotationConstrains = {1,0,1}
     },
 
@@ -144,7 +144,7 @@ tanque2 = {
             Components = {"Transform", "MeshRenderer"},
 
             Transform = {
-                Position = {-11,2.4,0.19},
+                Position = {-11,1.0,0.19},
                 Scale = {1,1,1},
                 Rotation = {0,0,0}
             },

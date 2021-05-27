@@ -27,6 +27,8 @@ private:
 	Shoot* shoot = nullptr;
 	QuackEntity* torreta = nullptr;
 
+	Vector3D dirMovement;
+
 	void rotateTurret(float diff);
 	void rotate(float diff);
 	void move(Vector3D dir);

@@ -45,7 +45,7 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<ResumeButton>();
 		FactoryManager::instance()->add<IATank>();
 		
-		QuackEnginePro::Instance()->start("scenes/Partida1.lua", "Partida1");
+		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
 	}
 
 	return 0;

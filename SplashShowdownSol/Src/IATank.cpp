@@ -6,7 +6,7 @@
 #include <QuackEnginePro.h>
 
 #ifndef _USE_MATH_DEFINES
-	#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #endif
 #include <math.h>
 
@@ -46,6 +46,8 @@ void IATank::start()
 	if (targetEnt != nullptr)
 		target = targetEnt->transform();
 	else std::cout << "ERROR: no se encontró el objeto con nombre " << targetName << " para usar su transform en el componente " << GetName() << "\n";
+
+	dirMovement = Vector3D(1, 0, 1);
 }
 
 void IATank::rotateTurret(float diff)
@@ -73,7 +75,7 @@ void IATank::rotate(float diff)
 	if (abs(aux.y) < rotSpeedLimit_) {
 		rigidbody_->addTorque({ 0, 0, -rotSpeed_ * dir * diff });
 	}
-	if(visible) {
+	if (visible) {
 		Vector3D dir = torreta->transform()->up * -1;
 		Vector3D pos = torreta->transform()->position();
 		shoot->shootBullet(dir.normalize(), pos + dir.normalize() + Vector3D(.0, -.5, .0));
@@ -89,36 +91,24 @@ void IATank::move(Vector3D dir)
 
 void IATank::fixedUpdate()
 {
-	if (!rigidbody_) return;
-
-	bool visible = false;	// TODO aquí se hace la comprobación de raycast;
-
-	if (visible)
-	{
-		float diff = lookAtToFloat(target->position(), transform->forward);
-		rotate(diff);
-		move(target->position());
-	}
-	else {
-		if(pickNewRandom) {
-			int am = 10000;
-			randomDir = Vector3D(rand() % am, 0, rand() % am) / (float)am;
-		}
-		move(randomDir.normalize());
-	}
+	rigidbody_->setVelocity(dirMovement);
+	rigidbody_->setAngularVelocity(rigidbody_->angularVelocity() * 0.99);
 }
 
 void IATank::update()
 {
-	if (target)
-	{
-		float diff = lookAtToFloat(target->position(), torreta->transform()->forward);
-		rotateTurret(diff);
-	}
+	Vector3D v = target->position() - transform->position();
+
+	torreta->transform()->setLocalRotation(Vector3D(0,0, lookAtToFloat(transform->forward, transform->up) * 180 / M_PI));
 }
 
 void IATank::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal) {
-	pickNewRandom = true;
+
+	dirMovement = ((dirMovement - Vector3D(2, 2, 2) * (dirMovement * normal.normalize()) * normal.normalize()) * Vector3D(1, 0, 1)).normalize() * 1.5;
+
+	Vector3D v = Vector3D((rand() % 3 - 1), 0, (rand() % 3 - 1));
+
+	dirMovement += v;
 }
 
 float IATank::lookAtToFloat(Vector3D lookAt, Vector3D from)
