@@ -1,16 +1,33 @@
 ﻿Partida1Rebote = {
     entities = {
-        "defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3",
-        "diagonal4", "base1", "base2", "cubo1", "cubo2", "cubo3", "cubo4",
-        "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2",
-        "sceneLight", "pausa"
+        "defaultCamera",
+        "suelo",
+        "diagonal1",
+        "diagonal2",
+        "diagonal3",
+        "diagonal4",
+        "base1",
+        "base2",
+        "cubo1",
+        "cubo2",
+        "cubo3",
+        "cubo4",
+        "arbol",
+        "pared1",
+        "pared2",
+        "pared3",
+        "pared4",
+        "tanque1",
+        "tanque2",
+        "sceneLight",
+        "pausa"
     }
 }
 
 suelo = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "AudioSource"},
 
     Transform = {
         Position = {0, -0.25, 0},
@@ -27,6 +44,14 @@ suelo = {
         Static = true,
         PositionConstrains = {0, 0, 0},
         RotationConstrains = {0, 0, 0}
+    },
+
+    AudioSource = {
+        Source = "song4.mp3",
+        Volume = 0.15,
+        Loops = 10,
+        Enabled = true,
+        Play = true
     }
 }
 
@@ -34,12 +59,11 @@ tanque1 = {
     Active = true,
     Tag = "player",
     Components = {
-        "Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot",
-        "Health", "AudioSource"
+        "Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health", "AudioSource"
     },
 
     Transform = {
-        Position = {11, 2, 0},
+        Position = {11, 0.75, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
@@ -54,7 +78,6 @@ tanque1 = {
         PositionConstrains = {0, 0, 0},
         RotationConstrains = {1, 0, 1}
     },
-
     PlayerController = {
         MovSpeed = 15,
         RotSpeed = 2.5,
@@ -66,18 +89,18 @@ tanque1 = {
         ShootKey = 21
     },
 
-    Shoot = {BulletPrefabRoute = "Entities/BulletRicochet.lua", Speed = 10.0},
-
+    Shoot = {
+        BulletPrefabRoute = "Entities/BulletRicochet.lua",
+        Speed = 10.0
+    },
     Children = {
         entities = {"cabeza1"},
-
         cabeza1 = {
             Active = true,
-
             Components = {"Transform", "MeshRenderer", "AudioSource"},
 
             Transform = {
-                Position = {11, 2.4, 0.19},
+                Position = {11, 1.2, 0.19},
                 Scale = {1, 1, 1},
                 Rotation = {0, 0, 0}
             },
@@ -106,10 +129,10 @@ tanque1 = {
 tanque2 = {
     Active = true,
     Tag = "enemy",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "AudioSource"},
+    Components = {"Transform", "MeshRenderer", "IATank", "Shoot", "Rigidbody", "Health", "AudioSource"},
 
     Transform = {
-        Position = {-11, 2, 0},
+        Position = {-11, 0.75, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
@@ -124,7 +147,19 @@ tanque2 = {
         PositionConstrains = {0, 0, 0},
         RotationConstrains = {1, 0, 1}
     },
-
+    IATank = {
+        MovSpeed = 15,
+        RotSpeed = 2.5,
+        MovSpeedLimit = 10,
+        RotSpeedLimit = 10,
+        TurretSpeed = 55,
+        TargetName = "tanque1",
+        Frequency = 200
+    },
+    Shoot = {
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
+        Speed = 10.0
+    },
     Health = {HitPoints = 50},
 
     Children = {
@@ -133,15 +168,22 @@ tanque2 = {
         cabeza2 = {
             Active = true,
 
-            Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
 
             Transform = {
-                Position = {-11, 2.4, 0.19},
+                Position = {-11, 1.15, 0.19},
                 Scale = {1, 1, 1},
                 Rotation = {0, 0, 0}
             },
 
-            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"}
+            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"},
+            
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
+            }
         }
     },
 
@@ -155,13 +197,11 @@ tanque2 = {
 
 defaultCamera = {
     Components = {"Transform", "Camera"},
-
     Transform = {
         Position = {0, 17, 17},
         Scale = {1, 1, 1},
         Rotation = {0, 0, 0}
     },
-
     Camera = {
         Name = "MainCam",
         Background = {0.6, 0.8, 1},
@@ -179,15 +219,12 @@ defaultCamera = {
 
 sceneLight = {
     Active = true,
-
     Components = {"Transform", "Light"},
-
     Transform = {
         Position = {-5, 17, 10},
         Scale = {1, 1, 1},
         Rotation = {0, 0, 0}
     },
-
     Light = {
         LightType = 1,
         DiffuseColor = {1, 1, 1},
@@ -202,17 +239,15 @@ sceneLight = {
 
 arbol = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {0, 0, 0},
         Scale = {50, 50, 50},
         Rotation = {0, 90, 90}
     },
-
-    MeshRenderer = {Mesh = "arbol.mesh"},
-
+    MeshRenderer = {
+        Mesh = "arbol.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -225,17 +260,15 @@ arbol = {
 
 diagonal1 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {4, 0, 4},
         Scale = {50, 50, 50},
         Rotation = {-90, -45, 0}
     },
-
-    MeshRenderer = {Mesh = "Diagonal.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -248,17 +281,15 @@ diagonal1 = {
 
 diagonal2 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {-4, 0, -4},
         Scale = {50, 50, 50},
         Rotation = {-90, -45, 0}
     },
-
-    MeshRenderer = {Mesh = "Diagonal.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -271,17 +302,15 @@ diagonal2 = {
 
 diagonal3 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {-4, 0, 4},
         Scale = {50, 50, 50},
         Rotation = {-90, 45, 0}
     },
-
-    MeshRenderer = {Mesh = "Diagonal.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -294,17 +323,15 @@ diagonal3 = {
 
 diagonal4 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {4, 0, -4},
         Scale = {50, 50, 50},
         Rotation = {-90, 45, 0}
     },
-
-    MeshRenderer = {Mesh = "Diagonal.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -317,17 +344,15 @@ diagonal4 = {
 
 base1 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {9, 0, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-
-    MeshRenderer = {Mesh = "Base.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Base.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -340,17 +365,15 @@ base1 = {
 
 base2 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {-9, 0, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-
-    MeshRenderer = {Mesh = "Base.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Base.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -363,17 +386,15 @@ base2 = {
 
 cubo1 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {5, 0, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-
-    MeshRenderer = {Mesh = "Cubo.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Cubo.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -386,17 +407,15 @@ cubo1 = {
 
 cubo2 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {-5, 0, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-
-    MeshRenderer = {Mesh = "Cubo.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Cubo.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -409,17 +428,15 @@ cubo2 = {
 
 cubo3 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {0, 0, 5},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-
-    MeshRenderer = {Mesh = "Cubo.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Cubo.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -432,17 +449,15 @@ cubo3 = {
 
 cubo4 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {0, 0, -5},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-
-    MeshRenderer = {Mesh = "Cubo.mesh"},
-
+    MeshRenderer = {
+        Mesh = "Cubo.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -455,17 +470,15 @@ cubo4 = {
 
 pared1 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {0, 0, 7.5},
         Scale = {50, 48.25, 50},
         Rotation = {0, 90, 90}
     },
-
-    MeshRenderer = {Mesh = "ParedLarga.mesh"},
-
+    MeshRenderer = {
+        Mesh = "ParedLarga.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -478,17 +491,15 @@ pared1 = {
 
 pared2 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {0, 0, -7.5},
         Scale = {50, 50, 50},
         Rotation = {0, 90, 90}
     },
-
-    MeshRenderer = {Mesh = "ParedLarga.mesh"},
-
+    MeshRenderer = {
+        Mesh = "ParedLarga.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -501,17 +512,15 @@ pared2 = {
 
 pared3 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {12.5, 0, 0},
         Scale = {53, 50, 50},
         Rotation = {0, 90, 90}
     },
-
-    MeshRenderer = {Mesh = "ParedCorta.mesh"},
-
+    MeshRenderer = {
+        Mesh = "ParedCorta.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -524,17 +533,15 @@ pared3 = {
 
 pared4 = {
     Active = true,
-
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
     Transform = {
         Position = {-12.5, 0, 0},
         Scale = {53, 50, 50},
         Rotation = {0, 90, 90}
     },
-
-    MeshRenderer = {Mesh = "ParedCorta.mesh"},
-
+    MeshRenderer = {
+        Mesh = "ParedCorta.mesh"
+    },
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -547,8 +554,9 @@ pared4 = {
 
 pausa = {
     Active = true,
-
     Components = {"Pause"},
-
-    Pause = {SceneRoute = "scenes/pausa.lua", SceneName = "pausa"}
+    Pause = {
+        SceneRoute = "scenes/pausa.lua",
+        SceneName = "pausa"
+    }
 }

@@ -16,7 +16,7 @@
 #include "ChangeWeaponButton.h"
 #include "Pause.h"
 #include "ResumeButton.h"
-
+#include "IATank.h"
 
 
 #if (defined _DEBUG)
@@ -42,6 +42,8 @@ WinMain(HINSTANCE zHInstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdS
 		FactoryManager::instance()->add<ChangeWeaponButton>();
 		FactoryManager::instance()->add<Pause>();
 		FactoryManager::instance()->add<ResumeButton>();
+		FactoryManager::instance()->add<IATank>();
+		
 
 		QuackEnginePro::Instance()->setFullScreen(true);
 		QuackEnginePro::Instance()->start("scenes/mainMenu.lua", "mainMenu");
