@@ -74,7 +74,7 @@ tanque1 = {
         cabeza1 = {
             Active = true,
 
-            Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
 
             Transform = {
                 Position = {11,2.4,0.19},
@@ -84,6 +84,13 @@ tanque1 = {
 
             MeshRenderer = {
                 Mesh = "PatoCabeza.mesh"
+            },
+
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
             }
         }
     },
@@ -96,7 +103,7 @@ tanque1 = {
 tanque2 = {
     Active = true,
     Tag = "enemy",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "AudioSource"},
 
     Transform = {
         Position = {-11,2,0},
@@ -139,6 +146,13 @@ tanque2 = {
 
     Health = {
         HitPoints = 50;
+    },
+
+    AudioSource = {
+        Source = "oof.wav",
+        Volume = 1,
+        Loops = 0,
+        Enabled = true
     }
 }
 

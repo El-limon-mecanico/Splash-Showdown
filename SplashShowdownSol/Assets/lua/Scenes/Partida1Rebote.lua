@@ -26,15 +26,17 @@
 
 suelo = {
     Active = true,
+
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
     Transform = {
         Position = {0, -0.25, 0},
         Scale = {50, 50, 50},
         Rotation = {0, 90, 90}
     },
-    MeshRenderer = {
-        Mesh = "Suelo.mesh"
-    },
+
+    MeshRenderer = {Mesh = "Suelo.mesh"},
+
     Rigidbody = {
         Type = "Hull",
         Mass = 1,
@@ -48,15 +50,19 @@ suelo = {
 tanque1 = {
     Active = true,
     Tag = "player",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
+    Components = {
+        "Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot",
+        "Health", "AudioSource"
+    },
+
     Transform = {
         Position = {11, 0.75, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-    MeshRenderer = {
-        Mesh = "PatoCuerpo.mesh"
-    },
+
+    MeshRenderer = {Mesh = "PatoCuerpo.mesh"},
+
     Rigidbody = {
         Type = "Box",
         Mass = 1,
@@ -70,11 +76,12 @@ tanque1 = {
         RotSpeed = 2.5,
         MovSpeedLimit = 10,
         RotSpeedLimit = 10,
-        TurretSpeed = 55,
+        TurretSpeed = 100,
         TurretLeftKey = 20,
         TurretRightKey = 8,
         ShootKey = 21
     },
+
     Shoot = {
         BulletPrefabRoute = "Entities/BulletRicochet.lua",
         Speed = 10.0
@@ -83,34 +90,48 @@ tanque1 = {
         entities = {"cabeza1"},
         cabeza1 = {
             Active = true,
-            Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
+
             Transform = {
-                Position = {11, 1.15, 0.19},
+                Position = {11, 2.4, 0.19},
                 Scale = {1, 1, 1},
                 Rotation = {0, 0, 0}
             },
-            MeshRenderer = {
-                Mesh = "PatoCabeza.mesh"
+
+            MeshRenderer = {Mesh = "PatoCabeza.mesh"},
+
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
             }
         }
     },
-    Health = {
-        HitPoints = 50
+
+    Health = {HitPoints = 50},
+
+    AudioSource = {
+        Source = "oof.wav",
+        Volume = 1,
+        Loops = 0,
+        Enabled = true
     }
 }
 
 tanque2 = {
     Active = true,
     Tag = "enemy",
-    Components = {"Transform", "MeshRenderer", "IATank", "Shoot", "Rigidbody", "Health"},
+    Components = {"Transform", "MeshRenderer", "IATank", "Shoot", "Rigidbody", "Health", "AudioSource"},
+
     Transform = {
         Position = {-11, 0.75, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
-    MeshRenderer = {
-        Mesh = "PatoCuerpoMorado.mesh"
-    },
+
+    MeshRenderer = {Mesh = "PatoCuerpoMorado.mesh"},
+
     Rigidbody = {
         Type = "Box",
         Mass = 1,
@@ -132,23 +153,31 @@ tanque2 = {
         BulletPrefabRoute = "Entities/BulletExplode.lua",
         Speed = 10.0
     },
-    Health = {
-        HitPoints = 50
-    },
+    Health = {HitPoints = 50},
+
     Children = {
         entities = {"cabeza2"},
+
         cabeza2 = {
             Active = true,
+
             Components = {"Transform", "MeshRenderer"},
+
             Transform = {
                 Position = {-11, 1.15, 0.19},
                 Scale = {1, 1, 1},
                 Rotation = {0, 0, 0}
             },
-            MeshRenderer = {
-                Mesh = "PatoCabezaMorado.mesh"
-            }
+
+            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"}
         }
+    },
+
+    AudioSource = {
+        Source = "oof.wav",
+        Volume = 1,
+        Loops = 0,
+        Enabled = true
     }
 }
 

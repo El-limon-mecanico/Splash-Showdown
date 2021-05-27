@@ -15,7 +15,8 @@ fondo = {
         Name = "FondoMenuEntreRondas",
         Image = "fondoMenuEntreRondas.png",
         Position = {0,0},
-        Size = {1440,810}
+        Size = {1440,810},
+        TargetResolution = {1440,810}
     }
 }
 
@@ -38,7 +39,8 @@ playBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.5},
         Size = {100,50},
-        CallBackFunction = "Play"
+        CallBackFunction = "Play",
+        TargetResolution = {1440,810}
     }
 }
 
@@ -62,7 +64,8 @@ salirBoton = {
         BRColor = "FF000000",
         Position = {0.465,0.65},
         Size = {100,50},
-        CallBackFunction = "Back"
+        CallBackFunction = "Back",
+        TargetResolution = {1440,810}
     }
 }
 sonidoBoton = {
@@ -91,8 +94,9 @@ titulo = {
         Style= "WindowsLook/StaticImage",
         Name = "YouLose",
         Image = "YouLose.png",
-        Position = {0.21,0.10},
-        Size = {660,156}
+        Position = {0.27,0.10},
+        Size = {660,156},
+        TargetResolution = {1440,810}
     }
 }
 

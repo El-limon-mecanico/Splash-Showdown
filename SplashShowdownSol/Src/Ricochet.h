@@ -3,6 +3,7 @@
 
 class BulletMovement;
 class DealDamage;
+class AudioSource;
 
 class Ricochet :
     public Component
@@ -15,7 +16,7 @@ private:
     int bounces_;
     BulletMovement* bM_ = nullptr;
     DealDamage* dealDmg_ = nullptr;
-
+    AudioSource* aS_ = nullptr;
 
 public:
     Ricochet();

@@ -3,6 +3,7 @@
 #include "QuackEntity.h"
 #include "Health.h"
 #include "DealDamage.h"
+#include "AudioSource.h"
 
 Ricochet::Ricochet()
 {
@@ -12,6 +13,7 @@ Ricochet::~Ricochet()
 {
 	bM_ = nullptr;
 	dealDmg_ = nullptr;
+	aS_ = nullptr;
 }
 
 bool Ricochet::init(luabridge::LuaRef parameterTable)
@@ -29,6 +31,7 @@ void Ricochet::start()
 {
 	bM_ = entity_->getComponent<BulletMovement>();
 	dealDmg_ = entity_->getComponent<DealDamage>();
+	aS_ = entity_->getComponent<AudioSource>();
 }
 
 void Ricochet::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal)
@@ -50,5 +53,6 @@ void Ricochet::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D nor
 
 		//formula de la reflexion de la luz mirala que bonita me tenia que haber metido a optica
 		bM_->setDir(((dir - Vector3D(2, 2, 2) * (dir * normal.normalize()) * normal.normalize()) * Vector3D(1, 0, 1)).normalize());
+		aS_->play();
 	}
 }
