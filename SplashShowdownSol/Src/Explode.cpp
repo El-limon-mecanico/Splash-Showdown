@@ -27,7 +27,7 @@ void Explode::update()
 
 void Explode::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal)
 {
-	if (other->tag() == "pato") {
+	if (other->tag() == "player" || other->tag() == "enemy") {
 		std::cout << other->name() << ": AAAA RESIBI UN BALASO\n";
 		dealDmg_->dealDamage(other->getComponent<Health>());
 	}

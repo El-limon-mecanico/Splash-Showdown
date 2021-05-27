@@ -1,6 +1,6 @@
-﻿Partida2 = {
-    entities = {"defaultCamera", "suelo", "base1", "base2", "diagonal1", "diagonal2", "tobogan1", "tobogan2",
-                "rotondaCentral", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
+﻿Partida1Explosion = {
+    entities = {"defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3", "diagonal4", "base1", "base2", "cubo1","cubo2","cubo3",
+                "cubo4", "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
 }
 
 suelo = {
@@ -30,7 +30,7 @@ suelo = {
 
 tanque1 = {
     Active = true,
-    Tag = "pato",
+    Tag = "player",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
 
     Transform = {
@@ -44,7 +44,7 @@ tanque1 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
@@ -64,10 +64,10 @@ tanque1 = {
     },
 
     Shoot = {
-        BulletPrefabRoute = "Entities/BulletExample.lua",
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
         Speed = 10.0
     },
-
+    
     Children = {
         entities = {"cabeza1"},
 
@@ -81,7 +81,7 @@ tanque1 = {
                 Scale = {1,1,1},
                 Rotation = {0,0,0}
             },
-
+        
             MeshRenderer = {
                 Mesh = "PatoCabeza.mesh"
             }
@@ -95,7 +95,7 @@ tanque1 = {
 
 tanque2 = {
     Active = true,
-    Tag = "pato",
+    Tag = "enemy",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
 
     Transform = {
@@ -109,12 +109,17 @@ tanque2 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
         PositionConstrains = {0,0,0},
         RotationConstrains = {1,0,1}
+    },
+
+    
+    Health = {
+        HitPoints = 50
     },
 
     Children = {
@@ -130,15 +135,11 @@ tanque2 = {
                 Scale = {1,1,1},
                 Rotation = {0,0,0}
             },
-
+        
             MeshRenderer = {
                 Mesh = "PatoCabezaMorado.mesh"
             }
         }
-    },
-
-    Health = {
-        HitPoints = 50;
     }
 }
 
@@ -187,6 +188,131 @@ sceneLight = {
         OuterAngle = 90,
         isOn = true
     }
+}
+
+arbol = {
+    Active = true,
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,0},
+        Scale = {50,50,50},
+        Rotation = {0,90,90}
+    },
+
+    MeshRenderer = {
+        Mesh = "arbol.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
+    },
+}
+
+diagonal1 = {
+    Active = true,
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {4,0,4},
+        Scale = {50,50,50},
+        Rotation = {-90,-45,0}
+    },
+
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
+    },
+}
+
+diagonal2 = {
+    Active = true,
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {-4,0,-4},
+        Scale = {50,50,50},
+        Rotation = {-90,-45,0}
+    },
+
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
+    },
+}
+
+diagonal3 = {
+    Active = true,
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {-4,0,4},
+        Scale = {50,50,50},
+        Rotation = {-90,45,0}
+    },
+
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
+    },
+}
+
+diagonal4 = {
+    Active = true,
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {4,0,-4},
+        Scale = {50,50,50},
+        Rotation = {-90,45,0}
+    },
+
+    MeshRenderer = {
+        Mesh = "Diagonal.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
+    },
 }
 
 base1 = {
@@ -239,20 +365,19 @@ base2 = {
     },
 }
 
-
-rotondaCentral = {
+cubo1 = {
     Active = true,
 
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {0,0,0},
+        Position = {5,0,0},
         Scale = {50,50,50},
         Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
-        Mesh = "rotondaCentral.mesh",
+        Mesh = "Cubo.mesh",
     },
 
     Rigidbody = {
@@ -265,19 +390,19 @@ rotondaCentral = {
     },
 }
 
-diagonal1 = {
+cubo2 = {
     Active = true,
 
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {-4,0,4},
+        Position = {-5,0,0},
         Scale = {50,50,50},
-        Rotation = {-90,45,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
-        Mesh = "Diagonal.mesh",
+        Mesh = "Cubo.mesh",
     },
 
     Rigidbody = {
@@ -290,19 +415,44 @@ diagonal1 = {
     },
 }
 
-diagonal2 = {
+cubo3 = {
     Active = true,
 
     Components = {"Transform", "MeshRenderer", "Rigidbody"},
 
     Transform = {
-        Position = {4,0,-4},
+        Position = {0,0,5},
         Scale = {50,50,50},
-        Rotation = {-90,45,0}
+        Rotation = {-90,0,0}
     },
 
     MeshRenderer = {
-        Mesh = "Diagonal.mesh",
+        Mesh = "Cubo.mesh",
+    },
+
+    Rigidbody = {
+        Type = "Hull",
+        Mass = 1,
+        Trigger = false,
+        Static = true,
+        PositionConstrains = {0,0,0},
+        RotationConstrains = {0,0,0}
+    },
+}
+
+cubo4 = {
+    Active = true,
+
+    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+
+    Transform = {
+        Position = {0,0,-5},
+        Scale = {50,50,50},
+        Rotation = {-90,0,0}
+    },
+
+    MeshRenderer = {
+        Mesh = "Cubo.mesh",
     },
 
     Rigidbody = {
@@ -415,61 +565,9 @@ pared4 = {
     },
 }
 
-
-tobogan1 = {
-    Active = true,
-
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
-    Transform = {
-        Position = {3.5,0,3.5},
-        Scale = {50,50,50},
-        Rotation = {-90,-135,0}
-    },
-
-    MeshRenderer = {
-        Mesh = "Tobogan.mesh",
-    },
-
-    Rigidbody = {
-        Type = "Hull",
-        Mass = 1,
-        Trigger = false,
-        Static = true,
-        PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
-    },
-}
-
-
-tobogan2 = {
-    Active = true,
-
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
-
-    Transform = {
-        Position = {-3.5,0,-3.5},
-        Scale = {50,50,50},
-        Rotation = {-90, 45,0}
-    },
-
-    MeshRenderer = {
-        Mesh = "Tobogan.mesh",
-    },
-
-    Rigidbody = {
-        Type = "Hull",
-        Mass = 1,
-        Trigger = false,
-        Static = true,
-        PositionConstrains = {0,0,0},
-        RotationConstrains = {0,0,0}
-    },
-}
-
 pausa = {
     Active = true,
-
+    
     Components = {"Pause"},
 
     Pause = {
