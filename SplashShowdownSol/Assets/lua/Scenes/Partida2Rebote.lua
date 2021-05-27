@@ -6,7 +6,7 @@
 suelo = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "AudioSource"},
 
     Transform = {
         Position = {0,-0.25,0},
@@ -26,6 +26,14 @@ suelo = {
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },
+
+    AudioSource = {
+        Source = "song12.mp3",
+        Volume = 0.3,
+        Loops = 10,
+        Enabled = true,
+        Play = true
+    }
 }
 
 tanque1 = {
@@ -44,7 +52,7 @@ tanque1 = {
     },
 
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
@@ -110,10 +118,10 @@ tanque1 = {
 tanque2 = {
     Active = true,
     Tag = "enemy",
-    Components = {"Transform", "MeshRenderer", "Shoot", "Rigidbody", "Health", "AudioSource"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "IATank", "Shoot", "AudioSource"},
 
     Transform = {
-        Position = {-11,2,0},
+        Position = {-11,0.6,0},
         Scale = {50,50,50},
         Rotation = {-90,0,0}
     },
@@ -122,13 +130,31 @@ tanque2 = {
         Mesh = "PatoCuerpoMorado.mesh"
     },
 
+    IATank = {
+        TargetName = "tanque1",
+        RotSpeed = 2.5,
+        MovSpeedLimit = 10,
+        RotSpeedLimit = 10,
+        TurretSpeed = 55
+    },
+
+    Shoot = {
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
+        Speed = 10.0
+    },
+    
     Rigidbody = {
-        Type = "Cube",
+        Type = "Box",
         Mass = 1,
         Trigger = false,
         Static = false,
-        PositionConstrains = {0,0,0},
+        PositionConstrains = {0,1,0},
         RotationConstrains = {1,0,1}
+    },
+
+    
+    Health = {
+        HitPoints = 50
     },
 
     Children = {
@@ -154,10 +180,6 @@ tanque2 = {
                 Enabled = true
             }
         }
-    },
-    Shoot = {
-        BulletPrefabRoute = "Entities/BulletExplode.lua",
-        Speed = 10.0
     },
 
     Health = {

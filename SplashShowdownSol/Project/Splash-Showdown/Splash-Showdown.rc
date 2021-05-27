@@ -52,7 +52,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON1               ICON                    "D:\\Splash-Showdown\\SplashShowdownSol\\Assets\\iconoPatos.ico"
+IDI_ICON1               ICON                    "E:\\Github\\Splash-Showdown\\SplashShowdownSol\\Assets\\iconoPatos.ico"
 
 #endif    // Español (España, alfabetización internacional) resources
 /////////////////////////////////////////////////////////////////////////////

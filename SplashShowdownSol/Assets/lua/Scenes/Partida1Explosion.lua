@@ -6,7 +6,7 @@
 suelo = {
     Active = true,
 
-    Components = {"Transform", "MeshRenderer", "Rigidbody"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "AudioSource"},
 
     Transform = {
         Position = {0,-0.25,0},
@@ -26,6 +26,14 @@ suelo = {
         PositionConstrains = {0,0,0},
         RotationConstrains = {0,0,0}
     },
+
+    AudioSource = {
+        Source = "song2.mp3",
+        Volume = 0.3,
+        Loops = 10,
+        Enabled = true,
+        Play = true
+    }
 }
 
 tanque1 = {

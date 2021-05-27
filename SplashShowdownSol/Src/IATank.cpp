@@ -67,8 +67,8 @@ void IATank::update()
 		if (raycast.getLength() >= len) {
 			Vector3D dir = torreta->transform()->up * -1;
 			Vector3D pos = torreta->transform()->position();
-			pos.y += 0.4;
-			shoot->shootBullet(dir.normalize(), pos + dir.normalize());
+			pos.y += 0.2;
+			shoot->shootBullet(dir.normalize(), pos + dir.normalize() * 1.5);
 		}
 		currtime = 0;
 	}
