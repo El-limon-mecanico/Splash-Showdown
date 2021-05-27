@@ -50,7 +50,7 @@ tanque1 = {
     Tag = "player",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
     Transform = {
-        Position = {11, 2, 0},
+        Position = {11, 0.75, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
@@ -85,7 +85,7 @@ tanque1 = {
             Active = true,
             Components = {"Transform", "MeshRenderer"},
             Transform = {
-                Position = {11, 2.4, 0.19},
+                Position = {11, 1.15, 0.19},
                 Scale = {1, 1, 1},
                 Rotation = {0, 0, 0}
             },
@@ -102,9 +102,9 @@ tanque1 = {
 tanque2 = {
     Active = true,
     Tag = "enemy",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
+    Components = {"Transform", "MeshRenderer", "IATank", "Shoot", "Rigidbody", "Health"},
     Transform = {
-        Position = {-11, 2, 0},
+        Position = {-11, 0.75, 0},
         Scale = {50, 50, 50},
         Rotation = {-90, 0, 0}
     },
@@ -119,6 +119,15 @@ tanque2 = {
         PositionConstrains = {0, 0, 0},
         RotationConstrains = {1, 0, 1}
     },
+    IATank = {
+        MovSpeed = 15,
+        RotSpeed = 2.5,
+        MovSpeedLimit = 10,
+        RotSpeedLimit = 10,
+        TurretSpeed = 55,
+        TargetName = "tanque1",
+        Frequency = 200
+    },
     Shoot = {
         BulletPrefabRoute = "Entities/BulletExplode.lua",
         Speed = 10.0
@@ -132,7 +141,7 @@ tanque2 = {
             Active = true,
             Components = {"Transform", "MeshRenderer"},
             Transform = {
-                Position = {-11, 2.4, 0.19},
+                Position = {-11, 1.15, 0.19},
                 Scale = {1, 1, 1},
                 Rotation = {0, 0, 0}
             },

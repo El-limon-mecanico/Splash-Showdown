@@ -21,6 +21,9 @@ private:
 	float rotSpeedLimit_ = 10.0;
 	float turretSpeed_ = 55.0;
 
+	int currtime = 0;
+	int timebetween_ = 200;
+
 	float precision = 0.8f;
 
 	Transform* target = nullptr;

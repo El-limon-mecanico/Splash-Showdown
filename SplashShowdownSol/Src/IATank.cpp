@@ -4,6 +4,7 @@
 #include "SceneMng.h"
 #include "Shoot.h"
 #include <QuackEnginePro.h>
+#include "QuackRaycast.h"
 
 #ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES
@@ -27,6 +28,7 @@ bool IATank::init(luabridge::LuaRef parameterTable)
 	correct &= readVariable<float>(parameterTable, "MovSpeedLimit", &movSpeedLimit_);
 	correct &= readVariable<float>(parameterTable, "RotSpeedLimit", &rotSpeedLimit_);
 	correct &= readVariable<float>(parameterTable, "TurretSpeed", &turretSpeed_);
+	correct &= readVariable<int>(parameterTable, "Frequency", &timebetween_);
 
 	if (!correct) return false;
 
@@ -50,45 +52,6 @@ void IATank::start()
 	dirMovement = Vector3D(1, 0, 1);
 }
 
-void IATank::rotateTurret(float diff)
-{
-	if (abs(diff) > precision)
-	{
-		float dir = (diff < 0) ? -1 : 1;
-		torreta->transform()->Rotate(Vector3D(.0f, .0f, turretSpeed_ * dir) * QuackEnginePro::Instance()->time()->deltaTime());
-	}
-}
-
-void IATank::rotate(float diff)
-{
-	if (abs(diff) <= precision) return;
-
-	pickNewRandom = true;
-
-	float dir = (diff < 0) ? -1 : 1;
-
-	//Torsion a 0
-	Vector3D aux = rigidbody_->angularVelocity() * -1;
-	aux.x = aux.z = 0.0f;
-	rigidbody_->addTorque(aux);
-
-	if (abs(aux.y) < rotSpeedLimit_) {
-		rigidbody_->addTorque({ 0, 0, -rotSpeed_ * dir * diff });
-	}
-	if (visible) {
-		Vector3D dir = torreta->transform()->up * -1;
-		Vector3D pos = torreta->transform()->position();
-		shoot->shootBullet(dir.normalize(), pos + dir.normalize() + Vector3D(.0, -.5, .0));
-	}
-}
-
-void IATank::move(Vector3D dir)
-{
-	Vector3D vel = rigidbody_->velocity();
-	vel.y = 0.0f;
-	rigidbody_->addForce(dir.normalize() * (movSpeedLimit_ - vel.magnitude()));
-}
-
 void IATank::fixedUpdate()
 {
 	rigidbody_->setVelocity(dirMovement);
@@ -97,13 +60,20 @@ void IATank::fixedUpdate()
 
 void IATank::update()
 {
-	torreta->transform()->lookAt(target->position() * -1, Y_AXIS);
-	//QuackRaycast raycast(transform->position() + transform->forward * transform->scale().z, target->position());
-	//if(!(raycast.getLength() < (target->position() - transform->position()).magnitude() - 1.0f)) {
-	//	Vector3D dir = torreta->transform()->up * -1;
-	//	Vector3D pos = transform->getChild(0)->transform()->position();
-	//	shoot->shootBullet(dir.normalize(), pos + dir.normalize());
-	//}
+	if(++currtime >= timebetween_) {
+		QuackRaycast raycast(transform->position() + transform->forward * transform->scale().z, target->position());
+		float len = (target->position() - transform->position()).magnitude() + 1.0f;
+
+		if (raycast.getLength() >= len) {
+			Vector3D dir = torreta->transform()->up * -1;
+			Vector3D pos = torreta->transform()->position();
+			pos.y += 0.4;
+			shoot->shootBullet(dir.normalize(), pos + dir.normalize());
+		}
+		currtime = 0;
+	}
+
+	torreta->transform()->lookAt(target, NEGATIVE_Y_AXIS);
 }
 
 void IATank::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal) {
@@ -113,19 +83,4 @@ void IATank::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D norma
 	Vector3D v = Vector3D((rand() % 3 - 1), 0, (rand() % 3 - 1));
 
 	dirMovement += v;
-}
-
-float IATank::lookAtToFloat(Vector3D lookAt, Vector3D from)
-{
-	float dot = lookAt.x * from.x + lookAt.z * from.z;		// dot product between[x1, y1] and [x2, y2]
-	float det = lookAt.x * from.z - lookAt.z * from.x;		// determinant
-	return atan2(det, dot);		// atan2(y, x) or atan2(sin, cos)
-}
-
-Vector3D IATank::FloatToLookAt(float orientation)
-{
-	Vector3D vector(0.0f);
-	vector.x = sin(orientation * 180.0f / M_PI);
-	vector.z = cos(orientation * 180.0f / M_PI);
-	return vector.normalize();
 }
