@@ -96,7 +96,7 @@ tanque1 = {
 tanque2 = {
     Active = true,
     Tag = "pato",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
+    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "IATank", "Shoot"},
 
     Transform = {
         Position = {-11,2,0},
@@ -108,6 +108,19 @@ tanque2 = {
         Mesh = "PatoCuerpoMorado.mesh"
     },
 
+    IATank = {
+        TargetName = "tanque1",
+        RotSpeed = 2.5,
+        MovSpeedLimit = 10,
+        RotSpeedLimit = 10,
+        TurretSpeed = 55
+    },
+
+    Shoot = {
+        BulletPrefabRoute = "Entities/BulletExample.lua",
+        Speed = 10.0
+    },
+    
     Rigidbody = {
         Type = "Cube",
         Mass = 1,
