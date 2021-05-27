@@ -4,6 +4,7 @@
 #include "SceneMng.h"
 #include "Shoot.h"
 #include <QuackEnginePro.h>
+#include "QuackRaycast.h"
 
 #ifndef _USE_MATH_DEFINES
 #define _USE_MATH_DEFINES
@@ -97,8 +98,13 @@ void IATank::fixedUpdate()
 
 void IATank::update()
 {
-	torreta->transform()->lookAt(target->position(), Y_AXIS);
-	std::cout << torreta->transform()->rotation() <<"\n";
+	torreta->transform()->lookAt(target->position() * -1, Y_AXIS);
+	QuackRaycast raycast(transform->position() + transform->forward * transform->scale().z, target->position());
+	if(!(raycast.getLength() < (target->position() - transform->position()).magnitude() - 1.0f)) {
+		Vector3D dir = torreta->transform()->up * -1;
+		Vector3D pos = transform->getChild(0)->transform()->position();
+		shoot->shootBullet(dir.normalize(), pos + dir.normalize());
+	}
 }
 
 void IATank::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal) {
