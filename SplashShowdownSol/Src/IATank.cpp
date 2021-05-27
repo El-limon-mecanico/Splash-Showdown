@@ -97,9 +97,8 @@ void IATank::fixedUpdate()
 
 void IATank::update()
 {
-	Vector3D v = target->position() - transform->position();
-
-	torreta->transform()->setLocalRotation(Vector3D(0,0, lookAtToFloat(transform->forward, transform->up) * 180 / M_PI));
+	torreta->transform()->lookAt(target->position(), Y_AXIS);
+	std::cout << torreta->transform()->rotation() <<"\n";
 }
 
 void IATank::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D normal) {
