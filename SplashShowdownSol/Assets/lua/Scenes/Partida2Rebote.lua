@@ -1,4 +1,4 @@
-﻿Partida2 = {
+﻿Partida2Rebote = {
     entities = {"defaultCamera", "suelo", "base1", "base2", "diagonal1", "diagonal2", "tobogan1", "tobogan2",
                 "rotondaCentral", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
 }
@@ -30,7 +30,7 @@ suelo = {
 
 tanque1 = {
     Active = true,
-    Tag = "pato",
+    Tag = "player",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health"},
 
     Transform = {
@@ -64,7 +64,7 @@ tanque1 = {
     },
 
     Shoot = {
-        BulletPrefabRoute = "Entities/BulletExample.lua",
+        BulletPrefabRoute = "Entities/BulletRicochet.lua",
         Speed = 10.0
     },
 
@@ -95,7 +95,7 @@ tanque1 = {
 
 tanque2 = {
     Active = true,
-    Tag = "pato",
+    Tag = "enemy",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "Health"},
 
     Transform = {

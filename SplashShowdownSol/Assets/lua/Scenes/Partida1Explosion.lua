@@ -1,4 +1,4 @@
-﻿Partida1 = {
+﻿Partida1Explosion = {
     entities = {"defaultCamera", "suelo", "diagonal1", "diagonal2", "diagonal3", "diagonal4", "base1", "base2", "cubo1","cubo2","cubo3",
                 "cubo4", "arbol", "pared1", "pared2", "pared3", "pared4", "tanque1", "tanque2", "sceneLight", "pausa"}
 }
@@ -30,7 +30,7 @@ suelo = {
 
 tanque1 = {
     Active = true,
-    Tag = "pato",
+    Tag = "player",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health", "AudioSource"},
 
     Transform = {
@@ -109,7 +109,7 @@ tanque1 = {
 
 tanque2 = {
     Active = true,
-    Tag = "pato",
+    Tag = "enemy",
     Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "AudioSource"},
 
     Transform = {

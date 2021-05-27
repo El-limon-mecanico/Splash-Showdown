@@ -38,7 +38,7 @@ void Ricochet::onCollisionEnter(QuackEntity* other, Vector3D point, Vector3D nor
 {
 	bounces_--;
 
-	if (other->tag() == "pato") {
+	if (other->tag() == "player" || other->tag() == "enemy") {
 		std::cout << other->name() << ": AAAA RESIBI UN BALASO \n";
 		dealDmg_->dealDamage(other->getComponent<Health>());
 		entity_->destroy();	//borramos la bala
