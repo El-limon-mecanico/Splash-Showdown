@@ -131,7 +131,7 @@ tanque2 = {
     },
 
     Shoot = {
-        BulletPrefabRoute = "Entities/BulletExample.lua",
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
         Speed = 10.0
     },
     
@@ -155,16 +155,21 @@ tanque2 = {
         cabeza2 = {
             Active = true,
 
-            Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
 
             Transform = {
-                Position = {-11,1.0,0.19},
-                Scale = {1,1,1},
-                Rotation = {0,0,0}
+                Position = {-11, 1.15, 0.19},
+                Scale = {1, 1, 1},
+                Rotation = {0, 0, 0}
             },
-        
-            MeshRenderer = {
-                Mesh = "PatoCabezaMorado.mesh"
+
+            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"},
+            
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
             }
         }
     },

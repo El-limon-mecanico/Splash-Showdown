@@ -110,7 +110,7 @@ tanque1 = {
 tanque2 = {
     Active = true,
     Tag = "enemy",
-    Components = {"Transform", "MeshRenderer", "Rigidbody", "Health", "AudioSource"},
+    Components = {"Transform", "MeshRenderer", "Shoot", "Rigidbody", "Health", "AudioSource"},
 
     Transform = {
         Position = {-11,2,0},
@@ -137,18 +137,27 @@ tanque2 = {
         cabeza2 = {
             Active = true,
 
-            Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
 
             Transform = {
-                Position = {-11,2.4,0.19},
-                Scale = {1,1,1},
-                Rotation = {0,0,0}
+                Position = {-11, 1.15, 0.19},
+                Scale = {1, 1, 1},
+                Rotation = {0, 0, 0}
             },
 
-            MeshRenderer = {
-                Mesh = "PatoCabezaMorado.mesh"
+            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"},
+            
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
             }
         }
+    },
+    Shoot = {
+        BulletPrefabRoute = "Entities/BulletExplode.lua",
+        Speed = 10.0
     },
 
     Health = {

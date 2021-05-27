@@ -51,8 +51,7 @@ tanque1 = {
     Active = true,
     Tag = "player",
     Components = {
-        "Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot",
-        "Health", "AudioSource"
+        "Transform", "MeshRenderer", "Rigidbody", "PlayerController", "Shoot", "Health", "AudioSource"
     },
 
     Transform = {
@@ -161,7 +160,7 @@ tanque2 = {
         cabeza2 = {
             Active = true,
 
-            Components = {"Transform", "MeshRenderer"},
+            Components = {"Transform", "MeshRenderer", "AudioSource"},
 
             Transform = {
                 Position = {-11, 1.15, 0.19},
@@ -169,7 +168,14 @@ tanque2 = {
                 Rotation = {0, 0, 0}
             },
 
-            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"}
+            MeshRenderer = {Mesh = "PatoCabezaMorado.mesh"},
+            
+            AudioSource = {
+                Source = "duck.wav",
+                Volume = 0.4,
+                Loops = 0,
+                Enabled = true
+            }
         }
     },
 
